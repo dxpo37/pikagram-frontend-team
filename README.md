@@ -40,3 +40,12 @@
 animate username/password : on not:black()
 images on phone
 
+# make footers: ABOUT HELP TEAM 
+# login in button pseudo class passed on password/username
+# style login buttons
+# show button
+# 2 main borders for login fields
+# input field animation
+# picture animation
+# spacing
+# style all fonts

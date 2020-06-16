@@ -19,18 +19,19 @@ html(lang="en")
 
       div.loginBox.loginBox__username
         //- label(for="username" placeholder="phone/username/email")
-        input(type="text" name="username" class="inputText") 
-        span.floating-label Your email address
+        input.loginBox.loginBox__inputText.loginBox__usernameInput(type="text" name="username" ) 
+        div.floating-label Your username
         //- div Phone, Username or Email
-      div.loginBox.loginBox__password
-        //- label(for="password") 
-        input(type="password" name="password" class="inputText")
-        span.floating-label Your email address
-        //- div Password
+      //- div.loginBox.loginBox__password
+        //- label(for="password") 55
+      //- div.loginBox.loginBox_passwordField
+      div.floating-label.passwordPlaceholder Your password
+      input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
+      //- button.loginBox.loginShowBtn.loginShowBtn--hidden Show
 
       div.loginBox.loginBox__login_buttons
-        button.loginBox.loginBox__button.button--disabled Log In
-        button.loginBox.loginBox__button.button--disabled: span Demo User
+        a(href="http://www.google.com"): button.loginBox.loginBox__button.login__button.button--disabled(disabled=true) Log In
+        a(href="http://www.google.com"): button.loginBox.loginBox__button.demo__button.button--disabled(disabled=true) Demo User
       div.loginBox.loginBox__or ───────── OR ─────────
       div.loginBox.loginBox__fbook  
         img(src='/staticImages/123.png')
@@ -47,8 +48,5 @@ html(lang="en")
         a(href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"): img.loginBox.loginBox__appStore(src='/staticImages/appStore.png') 
         a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.loginBox.loginBox__googlePlay(src='/staticImages/playStore.png') 
         //- img(src='/staticImages/123.png') 
-
-    div.navBox
-      ul.navBox.navBox__links
-        li: a(href='') link to team
-        li: a(href='') tech stack
+    include footer
+  script(src="/staticJs/landing.js")
