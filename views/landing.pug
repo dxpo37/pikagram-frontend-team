@@ -11,25 +11,27 @@ html(lang="en")
       div.phoneBox
         div.phoneBox.phoneBox__container
           img.phoneBox.phoneBox__photoHolder(src='/staticImages/1.png') 
-          img.phoneBox.phoneBox__rotatingPhoto(src="https://picsum.photos/400/400?random=11")
+          div.phoneBox.phoneBox__rotatingPhotoContainer
+            img.phoneBox.phoneBox__rotatingPhoto(src="https://i.picsum.photos/id/912/240/427.jpg?hmac=02U4KdKBh3QL_E1T5g9DMvlbEeaGHNn4WH4G4sOEFWQ")
 
       div.loginBox.loginBox__logo
         p Pikagram
         
       div.loginBox.loginBox__usernameField
         div.loginBox.loginBox__usernameFieldContainer
-          div.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Phone number, username, or email 
+          label.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Phone number, username, or email 
           input.loginBox.loginBox__inputText.loginBox__usernameInput(type="text" name="username" ) 
           
       div.loginBox.loginBox__passwordField
         div.loginBox.loginBox__passwordFieldContainer
-          div.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Password
-          input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
-          button.loginBox.loginShowBtn.loginShowBtn--hidden Show
+          label.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Password
+          div.loginBox.loginBox__passwordShowContainer
+            input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
+            button.loginBox.loginShowBtn.loginShowBtn--hidden Show
 
       div.loginBox.loginBox__login_buttons 
         a(href="http://www.google.com"): button.loginBox.loginBox__button.login__button(disabled=true) Log In
-        a(href="http://www.google.com"): button.loginBox.loginBox__button.demo__button(disabled=true) Demo User
+        a.demo__link(href="http://www.google.com"): button.loginBox.loginBox__button.demo__button(disabled=true) Demo User
 
       div.loginBox.loginBox__orContainer
         div.loginBox.loginBox__orSpacer
