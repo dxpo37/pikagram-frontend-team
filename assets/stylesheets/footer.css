@@ -1,6 +1,6 @@
-.footer{
+.footer {
   position: absolute;
-  border: 5px solid red;
+  /* border: 5px solid red; */
   bottom: 5px;
   display: flex;
   flex-direction: row;
@@ -13,29 +13,3 @@
   padding: 0 10px;
 }
 
-/* .footer__links{
-  display: flex;
-} */
-@media only screen and (max-width:760px) {
-  div.phoneBox{
-    display: none;
-  }
-  .mainBox {
-  padding:20px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows:  20px 50fr 38fr 38fr 30fr 15fr 20fr 14fr 18fr 18fr 44fr;
-  grid-template-areas: 
-  " . " 
-  " logo"
-  " username"
-  " password" 
-  " login" 
-  " or" 
-  " fbook" 
-  " forgotpassword" 
-  " signup" 
-  " getapp" 
-  " getAppButtons";
-}
-}

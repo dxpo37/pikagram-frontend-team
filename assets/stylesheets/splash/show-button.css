@@ -1,0 +1,17 @@
+/* ============THIS IS FOR THE SHOW BUTTON============ */
+.loginShowBtn{
+  right: -223px;
+  top: -30px;
+  height: 26px;
+  border: none;
+  background-color: rgb(250,250,250);
+  width: 32px;
+  height: 18px;
+}
+
+.loginShowBtn--hidden{
+  box-sizing: border-box;
+  z-index: -1;
+}
+
+

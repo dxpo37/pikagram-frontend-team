@@ -12,7 +12,7 @@ app.use('/staticImages', express.static('assets/images'))
 app.use('/staticCSS', express.static('assets/stylesheets'))
 app.use('/staticFonts', express.static('assets/fonts'))
 app.use('/staticIcons', express.static('assets/icons'))
-app.use('/staticJs', express.static('assets/public'))
+app.use('/staticJs', express.static('assets/js'))
 
 app.get("/", eh(async (req, res) => {
 

@@ -37,15 +37,21 @@
 ## /direct (its like an inbox)
 ## /explore
 
-animate username/password : on not:black()
-images on phone
 
-# make footers: ABOUT HELP TEAM 
-# login in button pseudo class passed on password/username
-# style login buttons
-# show button
-# 2 main borders for login fields
-# input field animation
-# picture animation
-# spacing
-# style all fonts
+# SPLASH PAGE FEATURES:
+## ~~make footers: ABOUT HELP TEAM~~ 
+## ~~login in button pseudo class passed on password/username~~
+## ~~style login buttons~~
+## ~~show button~~
+## ~~input field animation~~
+## ~~2 main borders for login fields~~
+
+## spacing
+width 753 px 
+height 584px
+phone width 371px
+horizontal gap 25px
+top vertical gap on phone 18px
+## style all fonts
+## picture animation
+## resizing images

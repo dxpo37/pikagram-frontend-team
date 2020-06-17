@@ -1,0 +1,84 @@
+body, button{
+  background-color: rgba(250,250,250);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+/* width 753 px 
+height 584px
+phone width 371px
+horizontal gap 25px
+top vertical gap on phone 18px */
+.mainBox {
+  padding:20px;
+  display: grid;
+  grid-template-columns: 1fr  426px 350px 1fr;
+  grid-template-rows:  10px 33px 100px 70px 70px 60px 30px 40px 28px 10px 36px 36px 88px;
+  grid-template-areas: 
+  ". . . ." 
+  ". phone . . "
+  ". phone logo . "
+  ". phone username . "
+  ". phone password ."
+  ". phone login ."
+  ". phone or ."
+  ". phone fbook ."
+  ". phone forgotpassword ."
+  ". phone . ."
+  ". phone signup ."
+  ". phone getapp ." 
+  ". phone getAppButtons .";
+}
+
+.phoneBox {
+  grid-area: phone;
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+}
+
+.loginBox__logo {
+  grid-area: logo;
+}
+.loginBox__usernameField {
+  grid-area: username;
+  position: relative;
+}
+.loginBox__passwordField {
+  grid-area: password;
+  position: relative;
+}
+.loginBox__login_buttons {
+  grid-area: login;
+}
+.loginBox__orContainer {
+  grid-area: or;
+}
+.loginBox__fbook {
+  grid-area: fbook;
+}
+.loginBox__signUp {
+  grid-area: signup;
+}
+.loginBox__forgotPassword {
+  grid-area: forgotpassword;
+}
+.loginBox__getApp {
+  grid-area: getapp;
+}
+.loginBox__getAppButtons {
+  grid-area: getAppButtons;
+}
+
+.loginBox__logo ,.loginBox__usernameField,.loginBox__passwordField,.loginBox__login_buttons,.loginBox__orContainer,.loginBox__fbook,.loginBox__signUp,.loginBox__forgotPassword {
+  border-right: 1px solid rgba(219,219,219);
+  border-left: 1px solid rgba(219,219,219);
+  background-color: rgba(255,255,255);
+}
+
+.loginBox__logo,  .loginBox__signUp{
+  border-top: 1px solid rgba(219,219,219);
+  border-radius: 1px;
+}
+.loginBox__forgotPassword, .loginBox__signUp{
+  border-bottom: 1px solid rgba(219,219,219);
+  border-radius: 1px;
+}

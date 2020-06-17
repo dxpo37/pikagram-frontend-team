@@ -12,6 +12,5 @@ div.phoneBox {
   display: flex;
   justify-items: center;
   height: 480px;
-  margin-left: -35px;
-  margin-right: -15px;
 }
+
