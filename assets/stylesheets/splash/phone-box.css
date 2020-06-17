@@ -4,7 +4,7 @@
 
 img.phoneBox {
   display: flex;
-  justify-items: center;
+  justify-items: flex-start;
   height: 618px;
 }
 

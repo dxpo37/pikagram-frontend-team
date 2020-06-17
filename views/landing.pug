@@ -18,14 +18,14 @@ html(lang="en")
         
       div.loginBox.loginBox__usernameField
         div.loginBox.loginBox__usernameFieldContainer
-          div.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Your username
+          div.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Phone number, username, or email 
           input.loginBox.loginBox__inputText.loginBox__usernameInput(type="text" name="username" ) 
           
       div.loginBox.loginBox__passwordField
         div.loginBox.loginBox__passwordFieldContainer
-          div.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Your password
+          div.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Password
           input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
-          button.loginBox.loginShowBtn.loginShowBtn--hidden Show
+          //- button.loginBox.loginShowBtn.loginShowBtn--hidden Show
 
       div.loginBox.loginBox__login_buttons 
         a(href="http://www.google.com"): button.loginBox.loginBox__button.login__button(disabled=true) Log In
@@ -38,14 +38,14 @@ html(lang="en")
 
       div.loginBox.loginBox__fbook
         img(src='/staticImages/fb-logo.png', alt="fb")
-        //- img.phoneBox.phoneBox__photoHolder(src='/staticImages/1.png') 
-        //- div.loginBox.loginBox__fbookLogo 
-        p Log in with Facebook
+        p.loginBox.loginBox__fbookText Log in with Facebook
+
       div.loginBox.loginBox__forgotPassword
-        a(href='') forgot password?
-      div.loginBox.loginBox__signUp
-        span Don't have an account? 
-          a(href="") sign up
+        a(href='') Forgot password?
+
+      div.loginBox.loginBox__signUp 
+        p Don't have an account?  
+        a(href="") Sign up
         
       div.loginBox.loginBox__getApp
         p Get the app.

@@ -1,12 +1,14 @@
 /* ============THIS IS FOR THE SHOW BUTTON============ */
 .loginShowBtn{
-  right: -223px;
-  top: -30px;
+  right: -217px;
+  top: -27px;
   height: 26px;
   border: none;
   background-color: rgb(250,250,250);
   width: 32px;
   height: 18px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .loginShowBtn--hidden{

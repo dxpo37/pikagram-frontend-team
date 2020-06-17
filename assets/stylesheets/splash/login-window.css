@@ -5,12 +5,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center; 
- /* width: 350px;
-  height: 380px;  */
-   /* border-right: 1px solid black;  
-   border-left: 1px solid black;   */
 }
 
+/* ============THIS IS FOR THE LOGO TEXT============ */
 .loginBox.loginBox__logo  p {
   display: flex;
   justify-content: center;
@@ -23,33 +20,76 @@
   font-weight: 500;
 }
 
-
-.loginBox.loginBox__logo > img {
-  width:220px;
-  height:59px;
-  object-fit: none;
-  object-position: 0px -672px;
-}
-
-.loginBox__fbook  > img {
-  width:34px;
-  height:34px;
-  object-fit: none;
-  object-position: -545px -511px;
-}
-
-.loginBox__fbook {
- display:flex;
- flex-direction: row;
- font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
- color: #385185
-}
-
-.loginBox__or {
+/* ============THIS IS FOR THE OR TEXT============ */
+.loginBox__orContainer{
+  display:flex;
+  flex-direction: row;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   color:#8e8e8e
 }
+.loginBox__orSpacer {
+  height: 1px;
+  width: 107.233px;
+  line-height: 18px;
+  box-sizing: border-box;
+  background-color:  rgba(219,219,219);
+}
+.loginBox__or {
+  margin: 0 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
 
+/* ============THIS IS FOR THE FB TEXT============ */
+.loginBox__fbook > img {
+  height: 16px;
+  width: 16px;
+  margin-right: 8px;
+}
+.loginBox__fbook{
+  display:flex;
+  flex-direction: row;
+  font-size: 14px;
+  color: #385185;
+  font-weight: 600;
+  line-height: 18px;
+  text-overflow: ellipse;
+}
+
+/* ============THIS IS FOR THE FORGOT PASSWORD TEXT============ */
+.loginBox__forgotPassword {
+  color: rgb(0,55,107);
+  font-size: 12px;
+  line-height: 14px;
+  padding-top: 12px;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+/* ============THIS IS FOR THE SIGN UP TEXT============ */
+.loginBox__signUp > p{ 
+  color: rgb(38,38,38);
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+  margin: 5px;
+
+}
+
+.loginBox__signUp  {
+  display: flex;
+  flex-direction: row;
+}
+
+.loginBox__signUp > a {
+  color: rgb(0,149,246);
+  font-weight: 600;
+  text-align: center;
+  font-size:14px;
+}
+
+
+/* ============THIS IS FOR THE APP/STORE TEXT============ */
 .loginBox__getAppButtons{
   display: flex;
   flex-direction: row;
@@ -61,5 +101,9 @@
 .loginBox__googlePlay {
   width:135px;
   height:auto;
+}
+
+.loginBox__getApp > p {
+  font-size: 14px;
 }
 
