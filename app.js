@@ -3,7 +3,7 @@ const cp = require('cookie-parser')
 const csrf = require('csurf')({ cookie: true })
 // const db = require("./models/index")
 const app = express()
-const eh = (handler) => (req, res, next) => handler(req, res, next).catch(next)
+const ah = (handler) => (req, res, next) => handler(req, res, next).catch(next)
 
 app.use(cp())
 app.use(express.urlencoded({ extended: false }))
@@ -14,11 +14,12 @@ app.use('/staticFonts', express.static('assets/fonts'))
 app.use('/staticIcons', express.static('assets/icons'))
 app.use('/staticJs', express.static('assets/js'))
 
-app.get("/", eh(async (req, res) => {
-
-  res.render('landing.pug')
+app.get("/splash", ah(async (req, res) => {
+  res.render('splash.pug')
 }))
-
+app.get("/", ah(async (req, res) => {
+  res.render('home.pug')
+}))
 
 // app.get('/new-person', csrf, eh(async (req, res) => {
 //   let hairColors = await db.HairColor.findAll()

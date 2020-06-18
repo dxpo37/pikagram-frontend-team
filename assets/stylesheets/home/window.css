@@ -1,0 +1,17 @@
+.mainBoxHome {
+  padding:20px;
+  display: grid;
+  grid-template-columns: 1fr 614px 50px 200px 35px 1fr;
+  grid-template-rows: 56px 20px 48px 48px 48px 48px 48px 18px ;
+  grid-template-areas: 
+  ". posts profileIcon profileIcon profileIcon ."
+  ". posts suggestionHeader suggestionHeader suggestionHeader ."
+  ". posts suggestionIcon1 suggestionUsername1 suggestionText1 ."
+  ". posts suggestionIcon2 suggestionUsername2 suggestionText2 ."
+  ". posts suggestionIcon3 suggestionUsername3 suggestionText3 ."
+  ". posts suggestionIcon4 suggestionUsername4 suggestionText4 ."
+  ". posts suggestionIcon5 suggestionUsername5 suggestionText5 ."
+  ". posts footer footer ."
+  ;
+}
+

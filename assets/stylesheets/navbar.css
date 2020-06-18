@@ -1,9 +1,27 @@
-.navBox > ul{
+.navBar__logo {
   display: flex;
   justify-content: center;
-  
+  letter-spacing: 1px;
+  font-family: "pikaFont";
+  color:rgba(7, 7, 7, .75);
+  text-shadow: 0 0 1.6px rgba(100, 100, 100, 5);
+  font-size: 32px;
+  padding-top: 14px;
+  font-weight: 500;
+}
+.navBar_container{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 7px;
+  border-bottom: 1px solid rgba(219,219,219);
+  background-color: rgba(255,255,255);
 }
 
-.navBox li {
-margin:10px;
+.navBar__iconsContainer{
+  display: flex;
+  align-items: center ;
+}
+.navBar__icons{
+  height: 22px;
+  padding: 0 10px
 }

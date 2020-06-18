@@ -55,3 +55,16 @@ top vertical gap on phone 18px
 ## style all fonts
 ## picture animation
 ## resizing images
+
+## Outstanding from splash page
+### footer
+### demo user login animation
+### ??tab
+
+## HOME PAGE GAME PLAN
+### nav bar - insta logo, team, home, profile...(maybe for tech stack)
+### GRID 
+  - #### column ". post profileIcon username followStatus .
+  - #### row ". profile suggestionHeader profile1 . . . profile5 . footer 
+
+

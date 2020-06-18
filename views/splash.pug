@@ -1,0 +1,52 @@
+extends index
+block content
+  div.mainBox
+    div.phoneBox
+      div.phoneBox.phoneBox__container
+        img.phoneBox.phoneBox__photoHolder(src='/staticImages/1.png') 
+        div.phoneBox.phoneBox__rotatingPhotoContainer
+          img.phoneBox.phoneBox__rotatingPhoto(src="https://i.picsum.photos/id/912/240/427.jpg?hmac=02U4KdKBh3QL_E1T5g9DMvlbEeaGHNn4WH4G4sOEFWQ")
+
+    div.loginBox.loginBox__logo
+      p Pikagram
+      
+    div.loginBox.loginBox__usernameField
+      div.loginBox.loginBox__usernameFieldContainer
+        label.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Phone number, username, or email 
+        input.loginBox.loginBox__inputText.loginBox__usernameInput(type="text" name="username" ) 
+        
+    div.loginBox.loginBox__passwordField
+      div.loginBox.loginBox__passwordFieldContainer
+        label.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Password
+        div.loginBox.loginBox__passwordShowContainer
+          input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
+          button.loginBox.loginShowBtn.loginShowBtn--hidden Show
+
+    div.loginBox.loginBox__login_buttons 
+      a(href="http://www.google.com"): button.loginBox.loginBox__button.login__button(disabled=true) Log In
+      a.demo__link(href="http://www.google.com"): button.loginBox.loginBox__button.demo__button(disabled=true) Demo User
+
+    div.loginBox.loginBox__orContainer
+      div.loginBox.loginBox__orSpacer
+      div.loginBox.loginBox__or OR 
+      div.loginBox.loginBox__orSpacer
+
+    div.loginBox.loginBox__fbook
+      img(src='/staticImages/fb-logo.png', alt="fb")
+      p.loginBox.loginBox__fbookText Log in with Facebook
+
+    div.loginBox.loginBox__forgotPassword
+      a(href='') Forgot password?
+
+    div.loginBox.loginBox__signUp 
+      p Don't have an account?  
+      a(href="") Sign up
+      
+    div.loginBox.loginBox__getApp
+      p Get the app.
+    div.loginBox.loginBox__getAppButtons
+      a(href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"): img.loginBox.loginBox__appStore(src='/staticImages/appStore.png') 
+      a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.loginBox.loginBox__googlePlay(src='/staticImages/playStore.png') 
+      //- img(src='/staticImages/123.png') 
+  include footer
+  script(src="/staticJs/landing.js")

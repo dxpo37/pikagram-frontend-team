@@ -15,9 +15,8 @@ div.phoneBox {
 }
 
 .phoneBox__container {
-overflow-x: hidden;
-overflow-y: visible;
-
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .phoneBox__rotatingPhotoContainer {
