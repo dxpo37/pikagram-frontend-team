@@ -3,7 +3,18 @@ block content
   .navBar.navBar_container
     .navBar.navBar__logo Pikagram
     .navBar.navBar__iconsContainer
+      img.navBar.navBar__icons.navBar__addPost(src="/staticIcons/jigglypuff.svg")
       img.navBar.navBar__icons.navBar__homepage(src="/staticIcons/star.svg")
       img.navBar.navBar__icons.navBar__team(src="/staticIcons/smartphone.svg")
       img.navBar.navBar__icons.navBar__profile(src="/staticIcons/pikachu.svg")
+  .addPicContainer
+    h1 Add Post
+    form.addPicForm(enctype="multipart/form-data" action="/image" method="post") 
+      label(for ="picture") Upload Picture
+      input.file(type="file")
+      label(for="caption") Caption
+      input.caption(type="text")
+      button.formSubmit(type="submit") Add Post 
 
+
+  script(src="/staticJs/navbar.js")
