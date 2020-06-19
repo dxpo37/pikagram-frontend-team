@@ -11,13 +11,34 @@ async function get(apiEndPoint){
 }
 
 const getFollows = async (id) =>{
-  const posts = await get(`/api/posts/following/${id}`) 
+  const following = await get(`/api/posts/following/${id}`) 
+  // postsContainer.innerHTML = JSON.stringify(following)
 
-  stringifiedPost = `<div>${JSON.stringify(posts)}</div>`
-
-  postsContainer.innerHTML = stringifiedPost
-
+  
+  
+  const posts = following.sortedPosts.map(post=> {
+    return `
+          <img src="${post.photoPath}" alt="${post.photoPath}">
+          <div class="individualPostCaption">${post.caption}</div>
+          <div class="individualPostComments">${post.Comments}</div>
+          <div class="individualPostLikes">${post.Likes.length}</div>
+          `
+        })
+    
+  postsContainer.innerHTML = posts
 } 
 
+const getFirstFiveUsers = async() => {
+  debugger
+  const usersAll = await get(`/api/users/all`) 
+  // const usersAll = await res.json()
+  const firstFive = usersAll.users.slice(0,5).map(user => user.userName)
+  console.log(firstFive)
+  firstFive.forEach((username, index) => {
+    const profileContainer = document.querySelector(`.profile${index+1}`)
+    profileContainer.innerHTML = username
+  })
+}
 
 getFollows(id)
+getFirstFiveUsers()

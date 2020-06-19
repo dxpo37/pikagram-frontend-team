@@ -1,6 +1,24 @@
 extends index
 block content
   include navbar
-  h1 we did it. even though how?...
+  .profileContainer 
+  img.profileContainer.profilePic(src="/" alt="profile pic")
+  .profileContainer.username
+  .profileContainer.dropDown this is a beautiful gear
+  .profileContainer.button Edit Profile
+  .profileContainer.fullName
+  .profileContainer.bio
+  .profileContainer.numPostsContainer
+    .profileContainer.numPosts
+    .profileContainer posts
+  .profileContainer.numFollowersContainer
+    .profileContainer.numFollowers
+    .profileContainer Followers
+  .profileContainer.numFollowingContainer
+    .profileContainer.numFollowing
+    .profileContainer following
+  
+  .postsContainer posts
   include footer
+  script(src="staticJs/profile.js")
   

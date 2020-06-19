@@ -1,0 +1,61 @@
+extends index
+block content
+  div.mainBox
+    div.phoneBox
+      div.phoneBox.phoneBox__container
+        img.phoneBox.phoneBox__photoHolder(src='/staticImages/1.png') 
+        div.phoneBox.phoneBox__rotatingPhotoContainer
+          img.phoneBox.phoneBox__rotatingPhoto(src="https://i.picsum.photos/id/912/240/427.jpg?hmac=02U4KdKBh3QL_E1T5g9DMvlbEeaGHNn4WH4G4sOEFWQ")
+
+    div.loginBox.loginBox__logo
+      p Pikagram
+      
+    div.loginBox.loginBox__emailField
+      div.loginBox.loginBox__emailFieldContainer
+        label.loginBox.loginBox__floatingLabel.loginBox__emailPlaceholder Email 
+        input.loginBox.loginBox__inputText.loginBox__emailInput(type="text" name="email" ) 
+        
+    div.loginBox.loginBox__fullnameField
+      div.loginBox.loginBox__fullnameFieldContainer
+        label.loginBox.loginBox__floatingLabel.loginBox__fullnamePlaceholder full Name or email 
+        input.loginBox.loginBox__inputText.loginBox__fullnameInput(type="text" name="fullname" ) 
+        
+    div.loginBox.loginBox__usernameField
+      div.loginBox.loginBox__usernameFieldContainer
+        label.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Username 
+        input.loginBox.loginBox__inputText.loginBox__usernameInput(type="text" name="username" ) 
+        
+    div.loginBox.loginBox__passwordField
+      div.loginBox.loginBox__passwordFieldContainer
+        label.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Password
+        div.loginBox.loginBox__passwordShowContainer
+          input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
+          button.loginBox.loginShowBtn.loginShowBtn--hidden Show
+
+    div.loginBox.loginBox__login_buttons 
+      button.loginBox.loginBox__button.signup__button(disabled=true) Signup
+
+    div.loginBox.loginBox__orContainer
+      div.loginBox.loginBox__orSpacer
+      div.loginBox.loginBox__or OR 
+      div.loginBox.loginBox__orSpacer
+
+    div.loginBox.loginBox__termsOfCondition
+      img(src='/staticImages/fb-logo.png', alt="fb")
+      p.loginBox.loginBox__fbookText Log in with Facebook
+
+    div.loginBox.loginBox__forgotPassword
+      a(href='') Forgot password?
+
+    div.loginBox.loginBox__signUp 
+      p Hhave an account?  
+      a(href="login") Log in
+      
+    div.loginBox.loginBox__getApp
+      p Get the app.
+    div.loginBox.loginBox__getAppButtons
+      a(href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"): img.loginBox.loginBox__appStore(src='/staticImages/appStore.png') 
+      a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.loginBox.loginBox__googlePlay(src='/staticImages/playStore.png') 
+      //- img(src='/staticImages/123.png') 
+  include footer
+  script(src="/staticJs/landing.js")
