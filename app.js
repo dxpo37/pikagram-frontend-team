@@ -17,8 +17,22 @@ app.use('/staticJs', express.static('assets/js'))
 app.get("/splash", ah(async (req, res) => {
   res.render('splash.pug')
 }))
+
 app.get("/", ah(async (req, res) => {
   res.render('home.pug')
+}))
+
+app.get("/login", ah(async (req, res) => {
+  res.render('login.pug') //this is just placeholder
+}))
+
+app.get("/signup", ah(async (req, res) => {
+  res.render('signup.pug') //this is just placeholder
+}))
+
+app.get("/profile", ah(async (req, res) => {
+  res.render('profile.pug')
+  // res.end('hello from the would be pug')
 }))
 
 // app.get('/new-person', csrf, eh(async (req, res) => {
@@ -39,4 +53,8 @@ app.get("/", ah(async (req, res) => {
 //   res.send('An error occurred!');
 // });
 
-app.listen(8877, ()=> console.log(`Listening on port 8877`))
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8877;
+}
+app.listen(port);

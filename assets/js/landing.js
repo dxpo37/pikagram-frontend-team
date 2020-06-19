@@ -8,12 +8,36 @@ const buttons = document.querySelectorAll(".loginBox__button")
 const showButton = document.querySelector(".loginShowBtn")
 const rotatingImage = document.querySelector(".phoneBox__rotatingPhoto")
 
+const homeurl = 'https://cryptic-river-74579.herokuapp.com';
 
+const login = async (username,password) => {
+  const credentials = {
+    email: username || usernameElement.value,
+    password: password || passwordElement.value
+  }
+
+  const res = await fetch('https://cryptic-river-74579.herokuapp.com/api/users/token', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(credentials)
+  });
+ 
+
+  const response = await res.json();
+  debugger
+  const {token, user} = response;
+  localStorage.setItem('token', token)
+  localStorage.setItem('id', user.id)
+  window.location.href = '/'
+}
+
+buttons[0].addEventListener('click', ()=> {
+  login('demo@gmail.com', 'password')
+})
 //adds demo user credentials and routes to homepage
 buttons[1].addEventListener("click", (e)=>{
-
-
-
+  debugger
+  login('demo@gmail.com', 'password')
 })
 
 

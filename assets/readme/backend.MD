@@ -2,12 +2,13 @@
 - GET /api/users - Get list of all users
 - GET /api/users/:userId - Get a single user #userId
 - GET /api/users/:userId/followers - Get the followers of a user
-- GET /api/users/:userId/following - Get the following of a user
+- GET /api/users/:userId/following - Get the users you(:userId) follow
 - POST /api/users/:userId/following/:followingId - Follow a user
 - DELETE /api/users/:userId/following/:followingId - Unfollow a user
 
 - POST /api/users/ - Sign up at new user
 - PUT /api/users/:userId - Edit new user
+- GET /api/users/:userId - Log in new user
 - DELETE /api/users/:userId - Delete User
 
 # POST ROUTES

@@ -44,7 +44,7 @@
   width: 16px;
   margin-right: 8px;
 }
-.loginBox__fbook{
+.loginBox__fbook {
   display:flex;
   flex-direction: row;
   font-size: 14px;
@@ -63,6 +63,7 @@
   text-align: center;
   justify-content: flex-start;
 }
+.loginBox__forgotPassword a {outline-width: 0;}
 
 /* ============THIS IS FOR THE SIGN UP TEXT============ */
 .loginBox__signUp > p{ 
@@ -83,6 +84,7 @@
   font-weight: 600;
   text-align: center;
   font-size:14px;
+  outline-width: 0;
 }
 
 

@@ -1,17 +1,62 @@
 .mainBoxHome {
   padding:20px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 614px 50px 200px 35px 1fr;
   grid-template-rows: 56px 20px 48px 48px 48px 48px 48px 18px ;
   grid-template-areas: 
-  ". posts profileIcon profileIcon profileIcon ."
+  ". posts myProfile myProfile myProfile ."
   ". posts suggestionHeader suggestionHeader suggestionHeader ."
-  ". posts suggestionIcon1 suggestionUsername1 suggestionText1 ."
-  ". posts suggestionIcon2 suggestionUsername2 suggestionText2 ."
-  ". posts suggestionIcon3 suggestionUsername3 suggestionText3 ."
-  ". posts suggestionIcon4 suggestionUsername4 suggestionText4 ."
-  ". posts suggestionIcon5 suggestionUsername5 suggestionText5 ."
-  ". posts footer footer ."
+  ". posts suggestionIcon1 suggestionUsername1 followStatus1 ."
+  ". posts suggestionIcon2 suggestionUsername2 followStatus2 ."
+  ". posts suggestionIcon3 suggestionUsername3 followStatus3 ."
+  ". posts suggestionIcon4 suggestionUsername4 followStatus4 ."
+  ". posts suggestionIcon5 suggestionUsername5 followStatus5 ."
+  ". posts footer footer footer ."
   ;
 }
 
+.posts  {
+  grid-area: posts;
+  border: 1px solid rgba(219,219,219);
+  border-radius: 2px;
+  margin-right: 25px; 
+}
+.myProfile {grid-area: myProfile;}
+.suggestionHeader {grid-area: suggestionHeader;}
+.icon1 {grid-area: suggestionIcon1;}
+.icon2 {grid-area: suggestionIcon2;}
+.icon3 {grid-area: suggestionIcon3;}
+.icon4 {grid-area: suggestionIcon4;}
+.icon5 {grid-area: suggestionIcon5;}
+.profile1 {grid-area: suggestionUsername1;}
+.profile2 {grid-area: suggestionUsername2;}
+.profile3 {grid-area: suggestionUsername3;}
+.profile4 {grid-area: suggestionUsername4;}
+.profile5 {grid-area: suggestionUsername5;}
+.followStatus1 {grid-area: followStatus1;}
+.followStatus2 {grid-area: followStatus2;}
+.followStatus3 {grid-area: followStatus3;}
+.followStatus4 {grid-area: followStatus4;}
+.followStatus5 {grid-area: followStatus5;}
+.footer{ grid-area: footer;}
+/* @media only screen and (max-width: 1000px) {
+  .followers{
+    display: none;
+  }
+  .mainBoxHome {
+    padding:20px;
+    display: grid;
+    grid-template-columns: 1fr 614px 1fr;
+    grid-template-areas: 
+    ". posts ."
+    ". posts ."
+    ". posts ."
+    ". posts ."
+    ". posts ."
+    ". posts ."
+    ". posts ."
+    ". posts ."
+    ;
+  }
+} */
