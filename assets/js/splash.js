@@ -9,35 +9,18 @@ const loginButton = document.querySelector(".login__button")
 const demoButton = document.querySelector(".demo__button")
 const showButton = document.querySelector(".loginShowBtn")
 const rotatingImage = document.querySelector(".phoneBox__rotatingPhoto")
-const homeurl = 'https://cryptic-river-74579.herokuapp.com'
+const errorText = document.querySelector(".loginBox__errorText")
+import {login} from "./utils.js"
 
-const login = async (username, password) => {
-  const credentials = {
-    email: username || usernameElement.value,
-    password: password || passwordElement.value
-  }
-
-  const res = await fetch('https://cryptic-river-74579.herokuapp.com/api/users/token', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(credentials)
-  });
-  const response = await res.json()
-  const {token, user} = response;
-  debugger
-  localStorage.setItem('token', token)
-  localStorage.setItem('id', user.id)
-  window.location.href = '/'
-}
 
 loginButton.addEventListener('click', ()=> {
-  login('demo@gmail.com', 'password')
+
+  login(usernameElement, passwordElement, errorText)
+
 })
 //adds demo user credentials and routes to homepage
 demoButton.addEventListener("click", async ()=>{
-  
   login('demo@gmail.com', 'password')
-
 })
 
 
@@ -51,19 +34,19 @@ setInterval(async ()=>{
 window.addEventListener("load", ()=> usernameElement.value="")
 
 //highlights login button when password+username is correct length
-passwordElement.addEventListener("keyup", e=>{
-  const passwordLength = e.target.value.length
+passwordElement.addEventListener("keyup", ()=>{
+  const passwordLength = passwordElement.value.length
   const usernameLength=   usernameElement.value.length
   if(passwordLength>5 && usernameLength>0)  buttons.forEach(button => { button.removeAttribute('disabled') })
   else  buttons.forEach(button => { button.setAttribute('disabled', true) })
 })
 
 //highlights login button when password+username is correct length
-usernameElement.addEventListener("keyup", e=>{
-  const usernameLength = e.target.value.length
+usernameElement.addEventListener("keyup", ()=>{
+  const usernameLength = usernameElement.value.length
   const passwordLength= passwordElement.value.length
-  if(passwordLength>5 && usernameLength>0) buttons.forEach(button => {button.removeAttribute('disabled')})
-  else buttons.forEach(button => {button.setAttribute('disabled', true)})
+  if(passwordLength>5 && usernameLength>0) loginButton.removeAttribute('disabled')
+  else loginButton.setAttribute('disabled', true)
 })
 
 //display showbox for password and move placeholder when password is entered

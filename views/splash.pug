@@ -35,6 +35,9 @@ block content
       img(src='/staticImages/fb-logo.png', alt="fb")
       p.loginBox.loginBox__fbookText Log in with Facebook
 
+    div.loginBox.loginBox__errorMessage
+      p.loginBox.loginBox__errorText 
+
     div.loginBox.loginBox__forgotPassword
       a(href='') Forgot password?
 
@@ -49,4 +52,4 @@ block content
       a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.loginBox.loginBox__googlePlay(src='/staticImages/playStore.png') 
       //- img(src='/staticImages/123.png') 
   include footer
-  script(src="/staticJs/splash.js")
+  script(type="module" src="/staticJs/splash.js")
