@@ -47,7 +47,7 @@ top vertical gap on phone 18px */
   grid-area: password;
   position: relative;
 }
-.loginBox__login_buttons {
+.loginBox__loginButtons {
   grid-area: login;
 }
 .loginBox__orContainer {
@@ -69,7 +69,7 @@ top vertical gap on phone 18px */
   grid-area: getAppButtons;
 }
 
-.loginBox__logo ,.loginBox__usernameField,.loginBox__passwordField,.loginBox__login_buttons,.loginBox__orContainer,.loginBox__fbook,.loginBox__signUp,.loginBox__forgotPassword {
+.loginBox__logo ,.loginBox__usernameField,.loginBox__passwordField,.loginBox__loginButtons,.loginBox__orContainer,.loginBox__fbook,.loginBox__signUp,.loginBox__forgotPassword {
   border-right: 1px solid rgba(219,219,219);
   border-left: 1px solid rgba(219,219,219);
   background-color: rgba(255,255,255);

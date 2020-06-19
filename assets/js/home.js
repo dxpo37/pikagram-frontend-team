@@ -15,7 +15,7 @@ const getFollows = async (id) =>{
   // postsContainer.innerHTML = JSON.stringify(following)
 
   
-  
+  debugger
   const posts = following.sortedPosts.map(post=> {
     return `
           <img src="${post.photoPath}" alt="${post.photoPath}">

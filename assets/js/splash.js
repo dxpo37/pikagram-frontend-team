@@ -4,13 +4,14 @@ const passwordPlaceholder = document.querySelector(".loginBox__passwordPlacehold
 const usernamePlaceholder = document.querySelector(".loginBox__usernamePlaceholder")
 const usernameContainer = document.querySelector(".loginBox__usernameFieldContainer")
 const passwordContainer = document.querySelector(".loginBox__passwordFieldContainer")
-const buttons = document.querySelectorAll(".loginBox__button")
+const buttons = document.querySelectorAll(".loginBox__buttons")
+const loginButton = document.querySelector(".login__button")
+const demoButton = document.querySelector(".demo__button")
 const showButton = document.querySelector(".loginShowBtn")
 const rotatingImage = document.querySelector(".phoneBox__rotatingPhoto")
+const homeurl = 'https://cryptic-river-74579.herokuapp.com'
 
-const homeurl = 'https://cryptic-river-74579.herokuapp.com';
-
-const login = async (username,password) => {
+const login = async (username, password) => {
   const credentials = {
     email: username || usernameElement.value,
     password: password || passwordElement.value
@@ -21,23 +22,22 @@ const login = async (username,password) => {
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(credentials)
   });
- 
-
-  const response = await res.json();
-  debugger
+  const response = await res.json()
   const {token, user} = response;
+  debugger
   localStorage.setItem('token', token)
   localStorage.setItem('id', user.id)
   window.location.href = '/'
 }
 
-buttons[0].addEventListener('click', ()=> {
+loginButton.addEventListener('click', ()=> {
   login('demo@gmail.com', 'password')
 })
 //adds demo user credentials and routes to homepage
-buttons[1].addEventListener("click", (e)=>{
-  debugger
+demoButton.addEventListener("click", async ()=>{
+  
   login('demo@gmail.com', 'password')
+
 })
 
 
@@ -57,7 +57,6 @@ passwordElement.addEventListener("keyup", e=>{
   if(passwordLength>5 && usernameLength>0)  buttons.forEach(button => { button.removeAttribute('disabled') })
   else  buttons.forEach(button => { button.setAttribute('disabled', true) })
 })
-
 
 //highlights login button when password+username is correct length
 usernameElement.addEventListener("keyup", e=>{
@@ -95,10 +94,8 @@ usernameElement.addEventListener("keyup", e=>{
   }
 })
 
-
 //move input field for username when user starts to type
 usernameElement.addEventListener("keydown", e=>{
-  // debugger
   const usernameLength = e.target.value.length
   const key = e.key
   if(usernameLength === 1  ) {
@@ -112,7 +109,6 @@ usernameElement.addEventListener("keydown", e=>{
 
 //move input field for password when user starts to type
 passwordElement.addEventListener("keydown", e=>{
-  // debugger
   const passwordLength = e.target.value.length
   const key = e.key
   if(passwordLength === 1  ) {
@@ -130,11 +126,6 @@ showButton.addEventListener('click', e=>{
   else {passwordElement.setAttribute("type", "password");; showButton.innerHTML="Show"}
 })
 
-usernameContainer.addEventListener('click', e=> {
-  usernameElement.focus()
-})
-
-passwordContainer.addEventListener('click', e=> {
-  passwordElement.focus()
-})
+usernameContainer.addEventListener('click', e=> {usernameElement.focus()})
+passwordContainer.addEventListener('click', e=> {passwordElement.focus()})
 
