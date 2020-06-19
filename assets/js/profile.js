@@ -18,7 +18,7 @@ async function get(apiEndPoint) {
   });
   const response = await res.json();
   return response;
-}
+
 
 const numberOfFollowers = async (id) => {
   const user = await get(`/api/users/${id}/followers`);
