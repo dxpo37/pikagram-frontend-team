@@ -38,6 +38,13 @@
   font-weight: 600;
 }
 
+/* ============THIS IS FOR THE Error Message TEXT============ */
+.loginBox__errorText {
+  color: rgba(237,73,86,1);
+  font-size: 14;
+  text-align: center;
+}
+
 /* ============THIS IS FOR THE FB TEXT============ */
 .loginBox__fbook > img {
   height: 16px;
