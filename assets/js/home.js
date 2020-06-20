@@ -1,44 +1,58 @@
-const homeurl = 'https://cryptic-river-74579.herokuapp.com';
-const token = localStorage.token
-const id = localStorage.id
+// const homeurl = 'https://cryptic-river-74579.herokuapp.com';
+// const token = localStorage.token
+// const id = localStorage.id
 const postsContainer = document.querySelector('.postsContainer');
-async function get(apiEndPoint){
-  const res = await fetch(homeurl + apiEndPoint,
-    {headers: { Authorization: `Bearer ${token}`}
-  });
-  const response = await res.json()
-  return response
-}
+import {get, post, deletePika} from './utils.js'
 
 const getFollows = async (id) =>{
-  const following = await get(`/api/posts/following/${id}`) 
-  // postsContainer.innerHTML = JSON.stringify(following)
-
-  
-  debugger
+  const following = await get(`/posts/following/${id}`) 
   const posts = following.sortedPosts.map(post=> {
     return `
-          <img src="${post.photoPath}" alt="${post.photoPath}">
+          <img class="profilePhoto" id="${post.user.userName}"  src="${post.user.profilePicPath}">
+          <div class="author">${post.user.userName}</div>
+          <img class="postPhoto" src="${post.photoPath}" alt="${post.photoPath}">
           <div class="individualPostCaption">${post.caption}</div>
-          <div class="individualPostComments">${post.Comments}</div>
-          <div class="individualPostLikes">${post.Likes.length}</div>
-          `
+          <div class="individualPostLikes" id="numLikes-${post.id}">${post.Likes.length}</div>
+          <img class="addLike" id="${post.id}" src="/staticIcons/bulbasaur.svg">`
         })
+        // <div class="individualPostComments">${post.Comments}</div>
     
   postsContainer.innerHTML = posts
+  addTrigger()
 } 
 
 const getFirstFiveUsers = async() => {
-  debugger
-  const usersAll = await get(`/api/users/all`) 
-  // const usersAll = await res.json()
-  const firstFive = usersAll.users.slice(0,5).map(user => user.userName)
-  console.log(firstFive)
-  firstFive.forEach((username, index) => {
+  const usersAll = await get(`/users/all`) 
+  const firstFiveUsers = usersAll.users.slice(0,5).map(user => user.userName)
+  firstFiveUsers.forEach((username, index) => {
     const profileContainer = document.querySelector(`.profile${index+1}`)
     profileContainer.innerHTML = username
   })
 }
 
+
+
 getFollows(id)
-getFirstFiveUsers()
+getFirstFiveUsers();
+
+
+function addTrigger(){
+  const likes = document.querySelectorAll('.addLike')
+    likes.forEach(like=> {
+      like.addEventListener('click', e => {
+        const numLikes = document.getElementById(`numLikes-${e.target.id}`)
+
+        if (e.target.classList.value.includes('liked')){
+          numLikes.innerHTML = parseInt(numLikes.innerHTML) - 1
+          e.target.classList.remove('liked')
+          deletePika(`/posts/${e.target.id}/likes`)
+        } else {
+          post(`/posts/${e.target.id}/likes`)
+          numLikes.innerHTML = parseInt(numLikes.innerHTML) + 1
+          e.target.classList.add('liked')
+        }
+      })
+    })
+}
+
+// '/posts/:postId(\\d+)/likes'

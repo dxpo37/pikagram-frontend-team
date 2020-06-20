@@ -1,6 +1,4 @@
-export {login}
-
-const login = async (username, password, error) => {
+ export const login = async (username, password, error) => {
   const credentials = { email: username.value || usernameElement.value, password: password.value || passwordElement.value }
   let response 
   try{
@@ -20,5 +18,40 @@ const login = async (username, password, error) => {
     window.location.href = '/'
 }
 
-const login = async (username, password, error) => {
+export async function post(apiEndPoint, payload){
+  const res = await fetch(homeurl + apiEndPoint, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function deletePika(apiEndPoint){
+  const res = await fetch(homeurl + apiEndPoint, {
+    method: 'DELETE',
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+  });
+}
+
+export async function get(apiEndPoint) {
+  const res = await fetch(homeurl + apiEndPoint, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  const response = await res.json();
+  return response;
+}
+
+export const numberOfFollowers = async (id) => {
+  const user = await get(`/users/${id}/followers`);
+  const followersNum = user.user.followers.length;
+  return followersNum;
+};
+
+export const numberOfFollowing = async (id) => {
+  const user = await get(`/users/${id}/following`);
+  const followingNum = user.user.following.length;
+  return followingNum;
+};
+
+
 
