@@ -1,0 +1,30 @@
+/* body, button{
+  background-color: rgba(250,250,250);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+a { outline-width: 0;}
+
+.mainBox {
+  padding:20px;
+  display: grid;
+  grid-template-columns: 1fr 426px 350px 1fr;
+  grid-template-rows:  10px 33px 53px 53px 53px 53px 60px 40px 10px 70px 50px 40px;
+  grid-template-areas: 
+  ". . ." 
+   ". logo . "
+  ". email . "
+  ". fullname ."
+  ". username ."
+  ". password ."
+  ". signupButton ."
+  ". terms ."
+  ". . ."
+  ". login ."
+  ". getapp ." 
+  ". getAppButtons .";
+}
+.loginBox__logo{}
+.loginBox__signupText{}
+.loginBox__emailField
+.loginBox__fullnameField
+.loginBox__usernameField */

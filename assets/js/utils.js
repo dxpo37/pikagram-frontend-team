@@ -20,5 +20,3 @@ const login = async (username, password, error) => {
     window.location.href = '/'
 }
 
-const login = async (username, password, error) => {
-
