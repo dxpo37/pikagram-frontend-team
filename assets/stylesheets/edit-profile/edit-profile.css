@@ -1,0 +1,65 @@
+.editProfileContainer {
+  padding:20px;
+  display: grid;
+  grid-template-columns: 1fr 200px 15px 600px 1fr;
+  grid-template-rows:  80px 80px;
+  grid-template-areas: 
+  ". editprofile . profile ." 
+  ". changepassword . profile ."
+  ". . . form ."
+}
+.editProfile{
+  grid-area: editprofile;
+}
+
+.changePassword{
+  grid-area: changepassword;
+}
+
+.editProfileForm{
+  grid-area: form;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px;
+  grid-template-areas:"name" "username" "bio" "email" "gender" "submit";
+}
+
+.editProfileContainer > .editProfile{ border-left: 2px solid black;}
+
+
+.editProfileForm input{
+  width: 350px;
+  height: 33px;
+}
+
+.editProfile__nameContainer{
+  grid-area: name;
+  display: flex;
+  justify-content: space-between;
+}
+.editProfile__usernameContainer{
+  grid-area: username;
+  display: flex;
+  justify-content: space-between;
+}
+.editProfile__bioContainer{
+  grid-area: bio;
+  display: flex;
+  justify-content: space-between;
+}
+.editProfile__emailContainer{
+  grid-area: email;
+  display: flex;
+  justify-content: space-between;
+}
+.editProfile__genderContainer{
+  grid-area: gender;
+  display: flex;
+  justify-content: space-between;
+}
+.editProfileSubmit{
+  grid-area: submit;
+  display: flex;
+  justify-content: space-between;
+  width:  80px;
+  height: 33px;
+}

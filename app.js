@@ -26,14 +26,25 @@ app.get("/login", ah(async (req, res) => {
   res.render('login.pug') //this is just placeholder
 }))
 
+app.get("/edit-profile", ah(async (req, res) => {
+  console.log(req)
+  res.render('edit-profile.pug') //this is just placeholder
+}))
+
+app.get("/change-password", ah(async (req, res) => {
+  res.render('change-password.pug') //this is just placeholder
+}))
+
 app.get("/signup", ah(async (req, res) => {
   res.render('signup.pug') //this is just placeholder
 }))
 
-app.get("/profile", ah(async (req, res) => {
-  res.render('profile.pug')
+app.get("/user-:userId(\\d+)", ah(async (req, res) => {
+  res.render('profile.pug', {profileId: req.params.userId})
   // res.end('hello from the would be pug')
 }))
+
+app.get("/")
 
 // app.get('/new-person', csrf, eh(async (req, res) => {
 //   let hairColors = await db.HairColor.findAll()

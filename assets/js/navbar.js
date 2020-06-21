@@ -45,7 +45,13 @@ const id = localStorage.id;
 const submitButton = document.querySelector('.formSubmit');
 const profileButton = document.querySelector('.navBar__profile')
 const homeButton = document.querySelector('.navBar__homepage')
-profileButton.addEventListener('click', ()=> window.location.href = '/profile')
+const postButton = document.querySelector('.navBar__addPost')
+const postFormContainer = document.querySelector('.addPostContainer')
+
+postButton.addEventListener('click', ()=> {
+  postFormContainer.classList.remove('addPostContainer--hidden')
+})
+profileButton.addEventListener('click', ()=> window.location.href = `/user-${id}`)
 homeButton.addEventListener('click', ()=> window.location.href = '/')
 submitButton.addEventListener('click', async(event) =>{
   event.preventDefault()

@@ -18,7 +18,7 @@
     window.location.href = '/'
 }
 
-export async function post(apiEndPoint, payload){
+export async function postPika(apiEndPoint, payload){
   const res = await fetch(homeurl + apiEndPoint, {
     method: 'POST',
     headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},

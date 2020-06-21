@@ -1,0 +1,24 @@
+extends index
+block content
+  include navbar
+  .editProfileContainer
+    .changePassword Change Password
+    .editProfile Edit Profile
+    form.editProfileForm(method="post")
+      .editProfile__nameContainer
+        label(for="name") Name
+        input.editProfileName(type="text")
+      .editProfile__usernameContainer
+        label(for="username") Username
+        input.editProfileName(type="text")
+      .editProfile__bioContainer
+        label(for="bio") Bio
+        input.editProfileName(type="text")
+      .editProfile__emailContainer
+        label(for="email") Email
+        input.editProfileName(type="text")
+      .editProfile__genderContainer 
+        label(for="gender") Gender
+        input.editProfileName(type="text")
+      button.editProfileSubmit(type="submit") Submit
+    script(src="/staticJs/edit-profile.js")
