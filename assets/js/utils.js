@@ -1,7 +1,7 @@
 export {login, databaseInputFieldChecker, inputFieldChecker, changeColors, placeholderMovement}
 
 const login = async (username, password, error) => {
-  const credentials = { email: username || username.value, password: password || password.value }
+  const credentials = { email: username.value|| username, password: password.value || password }
   let response 
   try{
     const res = await fetch('https://cryptic-river-74579.herokuapp.com/api/users/token', {
@@ -9,15 +9,16 @@ const login = async (username, password, error) => {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(credentials)
     })
+
     response = await res.json()
-    if(response.status=401) error.innerHTML = "Please Check Username and Password"
-
-  } catch(err) {window.location.href = '/error'}
-
-    const {token, user} = response;  
+    const {token, user} = response; 
     localStorage.setItem('token', token)
     localStorage.setItem('id', user.id)
     window.location.href = '/'
+    
+    if(response.status=401)  {error.innerHTML = "Please Check Username and Password"}
+  } catch(err) {window.location.href = '/error'}
+ 
 }
 let changeColors = (imageElement, imageLabel, className, color, text)=> {
   imageElement.classList.add(className) 
@@ -52,16 +53,14 @@ const databaseInputFieldChecker = async (targetElement, imageElement, imageLabel
 const inputFieldChecker = async (targetElement, imageElement, imageLabel, e)=> {
   if (targetElement.contains(e.target)) {
     imageElement.classList.remove("available"); imageElement.classList.remove("inuse"); imageElement.classList.remove("tooshort")
-    }
+  }
   else {
     if(targetElement.value.length>5) imageElement.classList.add("available") 
     else if (targetElement.value.length<=5&&targetElement.value.length>=1) changeColors(imageElement, imageLabel, "tooshort", "grey", "too short" )
+  }
 }
-}
-
 
 const placeholderMovement = (element, placeholder)=> {
-
   element.addEventListener("keyup", e=>{
     if(e.target.value.length>0) {
       placeholder.classList.add(`signupBox__placeholder--active`)

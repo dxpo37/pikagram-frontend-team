@@ -35,6 +35,11 @@ app.get("/profile", ah(async (req, res) => {
   // res.end('hello from the would be pug')
 }))
 
+app.get("/error", ah(async (req, res) => {
+  res.send('something went wrong...i think?')
+  // res.end('hello from the would be pug')
+}))
+
 // app.get('/new-person', csrf, eh(async (req, res) => {
 //   let hairColors = await db.HairColor.findAll()
 //   res.render('form.pug', { hairColors, _csrf: req.csrfToken() })
