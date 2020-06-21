@@ -1,51 +1,64 @@
 extends index
 block content
-  div.mainBox
-    div.loginBox.loginBox__logo
+  div.mainBoxSignup
+    div.signupBox.signupBox__logo
       p Pikagram
 
-    div.loginBox.loginBox__signupText
+    div.signupBox.signupBox__signupText
       p Sign up to see photos and videos from your friends. 
 
-    div.loginBox.loginBox__emailField
-      div.loginBox.loginBox__emailFieldContainer
-        label.loginBox.loginBox__floatingLabel.loginBox__emailPlaceholder Email 
-        input.loginBox.loginBox__inputText.loginBox__emailInput(type="text" name="email" ) 
+    div.signupBox.signupBox__emailField
+      div.signupBox.signupBox__fieldContainer.signupBox__emailFieldContainer
+        label.signupBox.signupBox__floatingLabel.signupBox__emailPlaceholder Email 
+        input.signupBox.signupBox__inputText.signupBox__emailInput(type="text" name="email" )
+        img.signupBox.signupBox__statusImage.signupBox__emailStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signupBox__statusImageTextLabel.signupBox__emailImageText  
         
-    div.loginBox.loginBox__fullnameField
-      div.loginBox.loginBox__fullnameFieldContainer
-        label.loginBox.loginBox__floatingLabel.loginBox__fullnamePlaceholder Full Name 
-        input.loginBox.loginBox__inputText.loginBox__fullnameInput(type="text" name="fullname" ) 
-        
-    div.loginBox.loginBox__usernameField
-      div.loginBox.loginBox__usernameFieldContainer
-        label.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Username 
-        input.loginBox.loginBox__inputText.loginBox__usernameInput(type="text" name="username" ) 
-        
-    div.loginBox.loginBox__passwordField
-      div.loginBox.loginBox__passwordFieldContainer
-        label.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Password
-        input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
+    div.signupBox.signupBox__firstnameField
+      div.signupBox.signupBox__fieldContainer.signupBox__firstnameFieldContainer
+        label.signupBox.signupBox__floatingLabel.signupBox__firstnamePlaceholder First Name 
+        input.signupBox.signupBox__inputText.signupBox__firstnameInput(type="text" name="firstname" )
+        img.signupBox.signupBox__statusImage.signupBox__firstnameStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signupBox__statusImageTextLabel.signupBox__firstnameImageText 
 
-    div.loginBox.loginBox__login_buttons 
-      button.loginBox.loginBox__button.signup__button(disabled=true) Sign up
+    div.signupBox.signupBox__lastnameField
+      div.signupBox.signupBox__fieldContainer.signupBox__lastnameFieldContainer
+        label.signupBox.signupBox__floatingLabel.signupBox__lastnamePlaceholder Last Name 
+        input.signupBox.signupBox__inputText.signupBox__lastnameInput(type="text" name="lastname" )
+        img.signupBox.signupBox__statusImage.signupBox__lastnameStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signupBox__statusImageTextLabel.signupBox__lastnameImageText 
 
-    div.loginBox.loginBox__termsOfCondition
-      img(src='/staticImages/fb-logo.png', alt="fb")
-      p.loginBox.loginBox__fbookText Log in with Facebook
+    div.signupBox.signupBox__usernameField
+      div.signupBox.signupBox__fieldContainer.signupBox__usernameFieldContainer
+        label.signupBox.signupBox__floatingLabel.signupBox__usernamePlaceholder Username 
+        input.signupBox.signupBox__inputText.signupBox__usernameInput(type="text" name="username" ) 
+        img.signupBox.signupBox__statusImage.signupBox__usernameStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signupBox__statusImageTextLabel.signupBox__usernameImageText 
 
-    div.loginBox.loginBox__forgotPassword
-      a(href='') Forgot password?
+    div.signupBox.signupBox__passwordField
+      div.signupBox.signupBox__fieldContainer.signupBox__passwordFieldContainer
+        label.signupBox.signupBox__floatingLabel.signupBox__passwordPlaceholder Password
+        div.signupBox.signupBox__passwordShowContainer
+          input.signupBox.signupBox__inputText.signupBox__passwordInput(type="password" name="password")
+          button.signBox.signupShowBtn.signupShowBtn--hidden Show
+        img.signupBox.signupBox__statusImage.signupBox__passwordStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signupBox__statusImageTextLabel.signupBox__passwordImageText 
 
-    div.loginBox.loginBox__signUp 
-      p Hhave an account?  
+    div.signupBox.signupBox__signupButtons 
+      button.signupBox.signupBox__button.signupButton(disabled=true) Sign up
+
+    div.signupBox.signupBox__terms
+      p.signupBox.signupBox__termsText By signing up, you agree to our Terms , Data Policy and Cookies Policy .
+
+    div.signupBox.signupBox__login
+      p Have an account?  
       a(href="login") Log in
       
-    div.loginBox.loginBox__getApp
+    div.signupBox.signupBox__getApp
       p Get the app.
-    div.loginBox.loginBox__getAppButtons
-      a(href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"): img.loginBox.loginBox__appStore(src='/staticImages/appStore.png') 
-      a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.loginBox.loginBox__googlePlay(src='/staticImages/playStore.png') 
+    div.signupBox.signupBox__getAppButtons
+      a(href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"): img.signupBox.signupBox__appStore(src='/staticImages/appStore.png') 
+      a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DsignupPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.signupBox.signupBox__googlePlay(src='/staticImages/playStore.png') 
       //- img(src='/staticImages/123.png') 
   include footer
-  script(src="/staticJs/landing.js")
+  script(type="module" src="/staticJs/signup.js")

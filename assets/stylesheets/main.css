@@ -7,6 +7,8 @@
 @import url("./splash/show-button.css");
 @import url("./splash/username-password.css");
 @import url("./splash/media-query.css");
+@import url("./signup/window.css");
+@import url("./signup/username-password.css");
 @import url("./home/window.css");
 @import url("./home/posts.css");
 @import url("./profile/profile.css");

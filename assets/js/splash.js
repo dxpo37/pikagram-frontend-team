@@ -4,7 +4,7 @@ const passwordPlaceholder = document.querySelector(".loginBox__passwordPlacehold
 const usernamePlaceholder = document.querySelector(".loginBox__usernamePlaceholder")
 const usernameContainer = document.querySelector(".loginBox__usernameFieldContainer")
 const passwordContainer = document.querySelector(".loginBox__passwordFieldContainer")
-const buttons = document.querySelectorAll(".loginBox__buttons")
+// const buttons = document.querySelectorAll(".loginBox__buttons")
 const loginButton = document.querySelector(".login__button")
 const demoButton = document.querySelector(".demo__button")
 const showButton = document.querySelector(".loginShowBtn")
@@ -12,17 +12,10 @@ const rotatingImage = document.querySelector(".phoneBox__rotatingPhoto")
 const errorText = document.querySelector(".loginBox__errorText")
 import {login} from "./utils.js"
 
-
-loginButton.addEventListener('click', ()=> {
-
-  login(usernameElement, passwordElement, errorText)
-
-})
+demoButton.addEventListener("mouseover", ()=> console.log("hihi"))
 //adds demo user credentials and routes to homepage
-demoButton.addEventListener("click", async ()=>{
-  login('demo@gmail.com', 'password')
-})
-
+loginButton.addEventListener('click', ()=> { login(usernameElement, passwordElement, errorText)})
+demoButton.addEventListener("click",  ()=>{ login('demo@gmail.com', 'password')})
 
 //rotate images for phone display
 setInterval(async ()=>{
@@ -37,8 +30,8 @@ window.addEventListener("load", ()=> usernameElement.value="")
 passwordElement.addEventListener("keyup", ()=>{
   const passwordLength = passwordElement.value.length
   const usernameLength=   usernameElement.value.length
-  if(passwordLength>5 && usernameLength>0)  buttons.forEach(button => { button.removeAttribute('disabled') })
-  else  buttons.forEach(button => { button.setAttribute('disabled', true) })
+  if(passwordLength>5 && usernameLength>0)   loginButton.removeAttribute('disabled')
+  else  loginButton.setAttribute('disabled', true) 
 })
 
 //highlights login button when password+username is correct length

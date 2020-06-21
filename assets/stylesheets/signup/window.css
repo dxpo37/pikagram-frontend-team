@@ -1,0 +1,61 @@
+body, button{
+  background-color: rgba(250,250,250);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+a { outline-width: 0;}
+
+.mainBoxSignup {
+  padding:20px;
+  display: grid;
+  grid-template-columns: 1fr 350px 1fr;
+  grid-template-rows:  10px 110px 90px 42px 42px 42px 42px 42px 45px 80px 10px 70px 50px 50px;
+  grid-template-areas: 
+  ".  . ." 
+  ". logo . "
+  ". signupText . "
+  ". email ."
+  ". firstname ."
+  ". lastname ."
+  ". username ."
+  ". password ."
+  ". signup ."
+  ". terms ."
+  ". . ."
+  ". login ."
+  ". getapp ." 
+  ". getAppButtons .";
+}
+
+.signupBox__logo {grid-area: logo; z-index: 2;}
+.signupBox__signupText {grid-area: signupText }
+.signupBox__emailField {grid-area: email; position: relative;}
+.signupBox__firstnameField {grid-area: firstname; position: relative;}
+.signupBox__lastnameField {grid-area: lastname; position: relative;}
+.signupBox__usernameField {grid-area: username; position: relative;}
+.signupBox__passwordField {grid-area: password}
+.signupBox__signupButtons  {grid-area: signup; }
+.signupBox__terms {grid-area: terms; padding-bottom: 25px;}
+.signupBox__login  {grid-area: login}
+.signupBox__getApp {grid-area: getapp}
+.signupBox__getAppButtons {grid-area: getAppButtons }
+
+
+
+.signupBox__logo,.signupBox__signupText,.signupBox__emailField,.signupBox__firstnameField,.signupBox__lastnameField,.signupBox__usernameField,
+.signupBox__passwordField,.signupBox__signupButtons,.signupBox__terms,.signupBox__login{
+
+  border-right: 1px solid rgba(219,219,219);
+  border-left: 1px solid rgba(219,219,219);
+  background-color: rgba(255,255,255);
+
+}
+
+.signupBox__logo,  .signupBox__signUp, .signupBox__login{
+  border-top: 1px solid rgba(219,219,219);
+  border-radius: 1px;
+}
+
+.signupBox__signUp ,.signupBox__terms, .signupBox__login {
+  border-bottom: 1px solid rgba(219,219,219);
+  border-radius: 1px;
+}
