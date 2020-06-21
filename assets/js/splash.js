@@ -12,9 +12,10 @@ const rotatingImage = document.querySelector(".phoneBox__rotatingPhoto")
 const errorText = document.querySelector(".loginBox__errorText")
 import {login} from "./utils.js"
 
-//login users
-loginButton.addEventListener('click', ()=> { login(usernameElement, passwordElement, errorText) })
-demoButton.addEventListener("click", async ()=>{ login('demo@gmail.com', 'password')})
+demoButton.addEventListener("mouseover", ()=> console.log("hihi"))
+//adds demo user credentials and routes to homepage
+loginButton.addEventListener('click', ()=> { login(usernameElement, passwordElement, errorText)})
+demoButton.addEventListener("click",  ()=>{ login('demo@gmail.com', 'password')})
 
 //rotate images for phone display
 setInterval(async ()=>{

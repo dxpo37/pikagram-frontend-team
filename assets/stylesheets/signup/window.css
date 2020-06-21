@@ -1,30 +1,58 @@
-/* body, button{
+body, button{
   background-color: rgba(250,250,250);
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 a { outline-width: 0;}
 
-.mainBox {
+.mainBoxSignup {
   padding:20px;
   display: grid;
-  grid-template-columns: 1fr 426px 350px 1fr;
-  grid-template-rows:  10px 33px 53px 53px 53px 53px 60px 40px 10px 70px 50px 40px;
+  grid-template-columns: 1fr 350px 1fr;
+  grid-template-rows:  10px 55px 90px 42px 42px 42px 42px 45px 40px 10px 20px 30px 44px;
   grid-template-areas: 
-  ". . ." 
-   ". logo . "
-  ". email . "
+  ".  . ." 
+  ". logo . "
+  ". signupText . "
+  ". email ."
   ". fullname ."
   ". username ."
   ". password ."
-  ". signupButton ."
+  ". signup ."
   ". terms ."
   ". . ."
   ". login ."
   ". getapp ." 
   ". getAppButtons .";
 }
-.loginBox__logo{}
-.loginBox__signupText{}
-.loginBox__emailField
-.loginBox__fullnameField
-.loginBox__usernameField */
+
+.signinBox__logo {grid-area: logo; z-index: 2;}
+.signinBox__signupText {grid-area: signupText }
+.signinBox__emailField {grid-area: email; position: relative;}
+.signinBox__fullnameField {grid-area: fullname; position: relative;}
+.signinBox__usernameField {grid-area: username; position: relative;}
+.signinBox__passwordField {grid-area: password}
+.signinBox__signinButtons  {grid-area: signup}
+.signinBox__termsOfCondition {grid-area: terms}
+.signinBox__signin  {grid-area: login}
+.signinBox__getApp {grid-area: getapp}
+.signinBox__getAppButtons {grid-area: getAppButtons }
+
+
+
+.signinBox__logo,.signinBox__signupText,.signinBox__emailField,.signinBox__fullnameField,.signinBox__usernameField,.signinBox__passwordField,.signinBox__signinButtons,.signinBox__termsOfCondition,.signinBox__signin,.signinBox__getApp,.signinBox__getAppButtons{
+
+  border-right: 1px solid rgba(219,219,219);
+  border-left: 1px solid rgba(219,219,219);
+  background-color: rgba(255,255,255);
+
+}
+
+.signinBox__logo,  .signinBox__signUp{
+  border-top: 1px solid rgba(219,219,219);
+  border-radius: 1px;
+}
+
+.signinBox__forgotPassword, .signinBox__signUp{
+  border-bottom: 1px solid rgba(219,219,219);
+  border-radius: 1px;
+}

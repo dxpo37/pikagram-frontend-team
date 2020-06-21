@@ -1,51 +1,55 @@
-//- extends index
-//- block content
-//-   div.mainBox
-//-     div.loginBox.loginBox__logo
-//-       p Pikagram
+extends index
+block content
+  div.mainBoxSignup
+    div.signinBox.signinBox__logo
+      p Pikagram
 
-//-     div.loginBox.loginBox__signupText
-//-       p Sign up to see photos and videos from your friends. 
+    div.signinBox.signinBox__signupText
+      p Sign up to see photos and videos from your friends. 
 
-//-     div.loginBox.loginBox__emailField
-//-       div.loginBox.loginBox__emailFieldContainer
-//-         label.loginBox.loginBox__floatingLabel.loginBox__emailPlaceholder Email 
-//-         input.loginBox.loginBox__inputText.loginBox__emailInput(type="text" name="email" ) 
+    div.signinBox.signinBox__emailField
+      div.signinBox.signinBox__emailFieldContainer
+        label.signinBox.signinBox__floatingLabel.signinBox__emailPlaceholder Email 
+        input.signinBox.signinBox__inputText.signinBox__emailInput(type="text" name="email" )
+        img.signinBox.signinBox__statusImage.signinBox__emailStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signinBox__statusImageTextLabel.signinBox__emailImageText  
         
-//-     div.loginBox.loginBox__fullnameField
-//-       div.loginBox.loginBox__fullnameFieldContainer
-//-         label.loginBox.loginBox__floatingLabel.loginBox__fullnamePlaceholder Full Name 
-//-         input.loginBox.loginBox__inputText.loginBox__fullnameInput(type="text" name="fullname" ) 
-        
-//-     div.loginBox.loginBox__usernameField
-//-       div.loginBox.loginBox__usernameFieldContainer
-//-         label.loginBox.loginBox__floatingLabel.loginBox__usernamePlaceholder Username 
-//-         input.loginBox.loginBox__inputText.loginBox__usernameInput(type="text" name="username" ) 
-        
-//-     div.loginBox.loginBox__passwordField
-//-       div.loginBox.loginBox__passwordFieldContainer
-//-         label.loginBox.loginBox__floatingLabel.loginBox__passwordPlaceholder Password
-//-         input.loginBox.loginBox__inputText.loginBox__passwordInput(type="password" name="password")
+    div.signinBox.signinBox__fullnameField
+      div.signinBox.signinBox__fullnameFieldContainer
+        label.signinBox.signinBox__floatingLabel.signinBox__fullnamePlaceholder Full Name 
+        input.signinBox.signinBox__inputText.signinBox__fullnameInput(type="text" name="fullname" )
+        img.signinBox.signinBox__statusImage.signinBox__fullnameStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signinBox__statusImageTextLabel.signinBox__fullnameImageText 
 
-//-     div.loginBox.loginBox__login_buttons 
-//-       button.loginBox.loginBox__button.signup__button(disabled=true) Sign up
+    div.signinBox.signinBox__usernameField
+      div.signinBox.signinBox__usernameFieldContainer
+        label.signinBox.signinBox__floatingLabel.signinBox__usernamePlaceholder Username 
+        input.signinBox.signinBox__inputText.signinBox__usernameInput(type="text" name="username" ) 
+        img.signinBox.signinBox__statusImage.signinBox__usernameStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signinBox__statusImageTextLabel.signinBox__usernameImageText 
 
-//-     div.loginBox.loginBox__termsOfCondition
-//-       img(src='/staticImages/fb-logo.png', alt="fb")
-//-       p.loginBox.loginBox__fbookText Log in with Facebook
+    div.signinBox.signinBox__passwordField
+      div.signinBox.signinBox__passwordFieldContainer
+        label.signinBox.signinBox__floatingLabel.signinBox__passwordPlaceholder Password
+        input.signinBox.signinBox__inputText.signinBox__passwordInput(type="password" name="password")
+        img.signinBox.signinBox__statusImage.signinBox__passwordStatusImage(src="https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Pokeball-512.png" alt="Girl in a jacket")
+        div.signinBox__statusImageTextLabel.signinBox__passwordImageText 
 
-//-     div.loginBox.loginBox__forgotPassword
-//-       a(href='') Forgot password?
+    div.signinBox.signinBox__signinButtons 
+      button.signinBox.signinBox__button.signupButton(disabled=true) Sign up
 
-//-     div.loginBox.loginBox__signUp 
-//-       p Hhave an account?  
-//-       a(href="login") Log in
+    div.signinBox.signinBox__termsOfCondition
+      p.signinBox.signinBox__fbookText By signing up, you agree to our Terms , Data Policy and Cookies Policy .
+
+    div.signinBox.signinBox__signin
+      p Have an account?  
+      a(href="login") Log in
       
-//-     div.loginBox.loginBox__getApp
-//-       p Get the app.
-//-     div.loginBox.loginBox__getAppButtons
-//-       a(href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"): img.loginBox.loginBox__appStore(src='/staticImages/appStore.png') 
-//-       a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.loginBox.loginBox__googlePlay(src='/staticImages/playStore.png') 
-//-       //- img(src='/staticImages/123.png') 
-//-   include footer
-//-   script(src="/staticJs/landing.js")
+    div.signinBox.signinBox__getApp
+      p Get the app.
+    div.signinBox.signinBox__getAppButtons
+      a(href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"): img.signinBox.signinBox__appStore(src='/staticImages/appStore.png') 
+      a(href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DsigninPage%26ig_mid%3D6535D6D9-46B8-426F-9CB4-0C0AA43E7C80%26utm_content%3Dlo%26utm_medium%3Dbadge"): img.signinBox.signinBox__googlePlay(src='/staticImages/playStore.png') 
+      //- img(src='/staticImages/123.png') 
+  include footer
+  script(type="module" src="/staticJs/signup.js")
