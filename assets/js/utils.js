@@ -14,7 +14,7 @@ export const login = async (username, password, error) => {
     localStorage.setItem('id', user.id)
     window.location.href = '/'
     
-    if(response.status=401)  {error.innerHTML = "Please Check Username and Password"}
+    if(response.status===401)  {error.innerHTML = "Please Check Username and Password"}
   } catch(err) {window.location.href = '/error'}
  
 }
