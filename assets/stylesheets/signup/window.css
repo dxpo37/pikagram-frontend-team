@@ -8,13 +8,14 @@ a { outline-width: 0;}
   padding:20px;
   display: grid;
   grid-template-columns: 1fr 350px 1fr;
-  grid-template-rows:  10px 55px 90px 42px 42px 42px 42px 45px 40px 10px 20px 30px 44px;
+  grid-template-rows:  10px 110px 90px 42px 42px 42px 42px 42px 45px 80px 10px 70px 50px 50px;
   grid-template-areas: 
   ".  . ." 
   ". logo . "
   ". signupText . "
   ". email ."
-  ". fullname ."
+  ". firstname ."
+  ". lastname ."
   ". username ."
   ". password ."
   ". signup ."
@@ -25,21 +26,23 @@ a { outline-width: 0;}
   ". getAppButtons .";
 }
 
-.signinBox__logo {grid-area: logo; z-index: 2;}
-.signinBox__signupText {grid-area: signupText }
-.signinBox__emailField {grid-area: email; position: relative;}
-.signinBox__fullnameField {grid-area: fullname; position: relative;}
-.signinBox__usernameField {grid-area: username; position: relative;}
-.signinBox__passwordField {grid-area: password}
-.signinBox__signinButtons  {grid-area: signup}
-.signinBox__termsOfCondition {grid-area: terms}
-.signinBox__signin  {grid-area: login}
-.signinBox__getApp {grid-area: getapp}
-.signinBox__getAppButtons {grid-area: getAppButtons }
+.signupBox__logo {grid-area: logo; z-index: 2;}
+.signupBox__signupText {grid-area: signupText }
+.signupBox__emailField {grid-area: email; position: relative;}
+.signupBox__firstnameField {grid-area: firstname; position: relative;}
+.signupBox__lastnameField {grid-area: lastname; position: relative;}
+.signupBox__usernameField {grid-area: username; position: relative;}
+.signupBox__passwordField {grid-area: password}
+.signupBox__signupButtons  {grid-area: signup; }
+.signupBox__terms {grid-area: terms; padding-bottom: 25px;}
+.signupBox__login  {grid-area: login}
+.signupBox__getApp {grid-area: getapp}
+.signupBox__getAppButtons {grid-area: getAppButtons }
 
 
 
-.signinBox__logo,.signinBox__signupText,.signinBox__emailField,.signinBox__fullnameField,.signinBox__usernameField,.signinBox__passwordField,.signinBox__signinButtons,.signinBox__termsOfCondition,.signinBox__signin,.signinBox__getApp,.signinBox__getAppButtons{
+.signupBox__logo,.signupBox__signupText,.signupBox__emailField,.signupBox__firstnameField,.signupBox__lastnameField,.signupBox__usernameField,
+.signupBox__passwordField,.signupBox__signupButtons,.signupBox__terms,.signupBox__login{
 
   border-right: 1px solid rgba(219,219,219);
   border-left: 1px solid rgba(219,219,219);
@@ -47,12 +50,12 @@ a { outline-width: 0;}
 
 }
 
-.signinBox__logo,  .signinBox__signUp{
+.signupBox__logo,  .signupBox__signUp, .signupBox__login{
   border-top: 1px solid rgba(219,219,219);
   border-radius: 1px;
 }
 
-.signinBox__forgotPassword, .signinBox__signUp{
+.signupBox__signUp ,.signupBox__terms, .signupBox__login {
   border-bottom: 1px solid rgba(219,219,219);
   border-radius: 1px;
 }
