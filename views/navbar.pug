@@ -7,9 +7,9 @@ block content
       img.navBar.navBar__icons.navBar__homepage(src="/staticIcons/star.svg")
       img.navBar.navBar__icons.navBar__team(src="/staticIcons/smartphone.svg")
       img.navBar.navBar__icons.navBar__profile(src="/staticIcons/pikachu.svg")
-  .addPicContainer
+  .addPostContainer.addPostContainer--hidden
     h1 Add Post
-    form.addPicForm(enctype="multipart/form-data" action="/image" method="post") 
+    form.addPicForm(action="/image" method="post") 
       label(for ="picture") Upload Picture
       input.file(type="file")
       label(for="caption") Caption

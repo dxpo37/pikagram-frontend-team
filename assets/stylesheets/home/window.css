@@ -16,11 +16,13 @@
   ;
 }
 
-.posts  {
+.postsContainer  {
   grid-area: posts;
-  border: 1px solid rgba(219,219,219);
-  border-radius: 2px;
-  margin-right: 25px; 
+  
+  margin-right: 25px;
+  display:flex;
+  flex-direction: column;
+ 
 }
 .myProfile {grid-area: myProfile;}
 .suggestionHeader {grid-area: suggestionHeader;}

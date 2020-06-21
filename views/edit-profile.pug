@@ -1,0 +1,30 @@
+extends index
+block content
+  include navbar
+  .editProfileContainer
+    .changePassword Change Password
+    .editProfile Edit Profile
+    .editProfile__profileInfo
+      img.editProfile__profilePic(src= "/" alt="profile pic")
+      div.editProfile__username
+    form.editProfileForm(method="post")
+      .editProfile__nameContainer
+        label(for="name") Name
+        input.editProfileName(type="text" name="name")
+      .editProfile__usernameContainer
+        label(for="username") Username
+        input.editProfileUsername(type="text" name="username")
+      .editProfile__bioContainer
+        label(for="bio") Bio
+        input.editProfileBio(type="text" name="bio")
+      .editProfile__emailContainer
+        label(for="email") Email
+        input.editProfileEmail(type="text" namee="email")
+      .editProfile__ageContainer
+        label(for="age") Age
+        input.editProfileAge(type="text" namee="age")
+      .editProfile__genderContainer 
+        label(for="gender") Gender
+        input.editProfileGender(type="text" name="gender")
+      button.editProfileSubmit(type="submit") Submit
+    script(src="/staticJs/edit-profile.js" type="module")

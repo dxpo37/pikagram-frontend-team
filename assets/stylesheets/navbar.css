@@ -25,3 +25,8 @@
   height: 22px;
   padding: 0 10px
 }
+
+.addPostContainer--hidden{
+  display: none;
+}
+

@@ -1,6 +1,4 @@
-export {login, databaseInputFieldChecker, inputFieldChecker, changeColors, placeholderMovement}
-
-const login = async (username, password, error) => {
+export const login = async (username, password, error) => {
   const credentials = { email: username.value|| username, password: password.value || password }
   let response 
   try{
@@ -20,7 +18,7 @@ const login = async (username, password, error) => {
   } catch(err) {window.location.href = '/error'}
  
 }
-let changeColors = (imageElement, imageLabel, className, color, text)=> {
+export let changeColors = (imageElement, imageLabel, className, color, text)=> {
   imageElement.classList.add(className) 
   imageElement.addEventListener("mouseleave" , ()=> {imageLabel.style.visibility="hidden" })
   imageElement.addEventListener("mouseenter" , ()=> {
@@ -30,7 +28,7 @@ let changeColors = (imageElement, imageLabel, className, color, text)=> {
   })
 }
 //Will check if username or password is already in use
-const databaseInputFieldChecker = async (targetElement, imageElement, imageLabel, type, e)=> {
+export const databaseInputFieldChecker = async (targetElement, imageElement, imageLabel, type, e)=> {
   if (targetElement.contains(e.target)) {
     imageElement.classList.remove("available");  imageElement.classList.remove("inuse");  imageElement.classList.remove("tooshort")
     imageLabel.innerHTML=""
@@ -42,7 +40,6 @@ const databaseInputFieldChecker = async (targetElement, imageElement, imageLabel
       body:JSON.stringify({"value":`${targetElement.value}`})
     })
     const response = await res.json()
-
     //if username/email is available in db
     if(response.message===true && targetElement.value.length>5) changeColors(imageElement, imageLabel, "available", "green", "available" )
     else if (response.title==="User found" && targetElement.value.length>5 ) changeColors(imageElement, imageLabel, "inuse", "red", "in use" )
@@ -50,7 +47,7 @@ const databaseInputFieldChecker = async (targetElement, imageElement, imageLabel
   }
 }
 
-const inputFieldChecker = async (targetElement, imageElement, imageLabel, e)=> {
+export const inputFieldChecker = async (targetElement, imageElement, imageLabel, e)=> {
   if (targetElement.contains(e.target)) {
     imageElement.classList.remove("available"); imageElement.classList.remove("inuse"); imageElement.classList.remove("tooshort")
   }
@@ -60,7 +57,7 @@ const inputFieldChecker = async (targetElement, imageElement, imageLabel, e)=> {
   }
 }
 
-const placeholderMovement = (element, placeholder)=> {
+export const placeholderMovement = (element, placeholder)=> {
   element.addEventListener("keyup", e=>{
     if(e.target.value.length>0) {
       placeholder.classList.add(`signupBox__placeholder--active`)
@@ -84,3 +81,47 @@ const placeholderMovement = (element, placeholder)=> {
   })
 
 }
+
+
+export async function postPika(apiEndPoint, payload){
+  const res = await fetch(homeurl + apiEndPoint, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+    body: JSON.stringify(payload)
+  });
+}
+export async function putPika(apiEndPoint, payload){
+  const res = await fetch(homeurl + apiEndPoint, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function deletePika(apiEndPoint){
+  const res = await fetch(homeurl + apiEndPoint, {
+    method: 'DELETE',
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+  });
+}
+
+export async function get(apiEndPoint) {
+  const res = await fetch(homeurl + apiEndPoint, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  const response = await res.json();
+  return response;
+}
+
+export const numberOfFollowers = async (id) => {
+  const user = await get(`/users/${id}/followers`);
+  const followersNum = user.user.followers.length;
+  return followersNum;
+};
+
+export const numberOfFollowing = async (id) => {
+  const user = await get(`/users/${id}/following`);
+  const followingNum = user.user.following.length;
+  return followingNum;
+};
+

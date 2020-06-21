@@ -1,0 +1,55 @@
+.profileContainerDiv {
+  padding:20px;
+  display: grid;
+  grid-template-columns: 1fr 350px 15px 600px 1fr;
+  grid-template-rows:  140px 50px 50px 50px 1fr;
+  grid-template-areas: 
+  ". pic . username  ." 
+  ". pic . stats ."
+  ". pic . fullname ."
+  ". pic . bio ."
+  ". posts posts posts .";
+}
+.profilePic{
+  grid-area: pic;
+  width: 200px;
+  height: 200px;
+  border-radius: 300px;
+  display: flex;
+}
+.usernameContainer{
+  grid-area: username;
+  display: flex;
+  justify-content: space-between;
+}
+.fullName{ grid-area: fullname;}
+
+.postsContainer{ 
+  grid-area: posts;
+  display: flex;
+}
+
+.bio{ grid-area: bio;}
+.statsContainer{ 
+  grid-area: stats;
+  display: flex;
+  justify-content: space-between;
+}
+
+.statsContainer > div{
+  display: flex;
+}
+.statsContainer > div > div{
+  padding: 20px;
+}
+
+.editProfile{
+  width: 100px;
+  height: 30px;
+}
+
+
+.profileIndividiualPost > img{
+  height: 295px;
+  width: 295px;
+}
