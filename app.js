@@ -44,6 +44,11 @@ app.get("/user-:userId(\\d+)", ah(async (req, res) => {
   // res.end('hello from the would be pug')
 }))
 
+app.get("/posts/:postId(\\d+)", ah(async (req, res) => {
+  res.render('post.pug', {postId: req.params.userId})
+
+}))
+
 app.get("/")
 
 // app.get('/new-person', csrf, eh(async (req, res) => {

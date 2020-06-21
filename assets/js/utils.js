@@ -25,6 +25,13 @@ export async function postPika(apiEndPoint, payload){
     body: JSON.stringify(payload)
   });
 }
+export async function putPika(apiEndPoint, payload){
+  const res = await fetch(homeurl + apiEndPoint, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+    body: JSON.stringify(payload)
+  });
+}
 
 export async function deletePika(apiEndPoint){
   const res = await fetch(homeurl + apiEndPoint, {

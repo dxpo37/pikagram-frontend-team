@@ -1,3 +1,27 @@
 .addLike{
   height: 20px;
 }
+
+.mainFeed__postPhoto{
+  width: 580px;
+}
+
+.mainFeed__profileUsernameContainer{
+  display: flex;
+  align-items: center;
+}
+
+.mainFeed__captionContainer{
+  display: flex;
+}
+
+.individualPost{
+  border: 1px solid rgba(219,219,219);
+  border-radius: 2px;
+  margin: 10px 0;
+}
+
+.addComment{
+  border: none;
+  width: 500px;
+}

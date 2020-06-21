@@ -11,23 +11,29 @@ const getFollows = async (id) => {
     .map((post) => {
       return `
           <div class="individualPost">
-            <img class="profilePhoto" id="${post.user.userName}"  src="${post.user.profilePicPath}">
-            <div class="author">${post.user.userName}</div>
-            <img class="postPhoto" src="${post.photoPath}" alt="${post.photoPath}">
-            <div class="individualPostCaption">${post.caption}</div>
+            <div class="mainFeed__profileUsernameContainer">
+              <img class="mainFeed_profilePhoto" id="${post.user.userName}"  src="${post.user.profilePicPath}">
+              <div class="author">${post.user.userName}</div>
+            </div>
+            <img class="mainFeed__postPhoto" src="${post.photoPath}" alt="${post.photoPath}">
+            <div class="mainFeed__captionContainer">
+              <div class="author">${post.user.userName}</div>
+              <div class="individualPostCaption">${post.caption}</div>
+            </div>
             <div class="individualPostLikes" likedBy="${post.Likes.length}"  id="numLikes-${post.id}">liked by ${JSON.stringify(post.Likes[0].User.userName)} and ${post.Likes.length-1} others </div>
             <div class="likeContainer"><img class="addLike" id="addLike-${post.id}" src="/staticIcons/bulbasaur.svg"> </div>
-            <div>
+            <a class="mainFeed__viewAllComments" href="/posts/${post.id}"> View all ${post.Comments.length} comments</a>
+            <div class="mainFeed__addCommentContainer">
               <input class="addComment" type="text" id="input-${post.id}" placeholder="Add comment..." >
-              <button class="postButton" id="button-${post.id}"> POST </div>
-            <div>
+              <button class="postButton" id="button-${post.id}"> POST
+            </div>
             <div class="individualPostComments">
-              ${post.Comments.map(comment=> {
+              ${post.Comments.slice(2).map(comment=> { 
                 return `
                   <div>${comment.userId}</div>
                   <div>${comment.comment}</div>
                 `
-                }) 
+                }).join("") 
               }
             </div>
           </div>
