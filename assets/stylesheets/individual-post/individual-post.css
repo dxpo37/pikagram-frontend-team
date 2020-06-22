@@ -1,0 +1,36 @@
+.singlePostContainer{
+  display: grid;
+  grid-template-columns: 1fr 600px 330px 1fr;
+  grid-template-rows: 75px 110px 250px 110px 60px;
+  grid-area: 
+  ". pic userInfo ."
+  ". pic captions ."
+  ". pic comments ."
+  ". pic responses ."
+  ". pic addComment ."
+  ;
+}
+
+.singlePost__photoContainer{
+  grid-area: pic;
+}
+
+.singlePost__userInfoContainer{
+  grid-area: userInfo;
+}
+
+.singlePost__captionContainer{
+  grid-area: captions;
+}
+
+.singlePost__commentsContainer{
+  grid-area: comments;
+}
+
+.singlePost__responsesContainer{
+  grid-area: responses;
+}
+
+.singlePost__addCommentContainer{
+  grid-area: addComment;
+}

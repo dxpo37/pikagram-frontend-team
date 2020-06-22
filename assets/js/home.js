@@ -57,7 +57,6 @@ const getFirstFiveUsers = async () => {
     profileContainer.innerHTML = username;
   });
 };
-
 getFollows(id);
 getFirstFiveUsers();
 
@@ -79,14 +78,17 @@ function addTrigger() {
       }
     });
   });
-
+  
   const postButtons = document.querySelectorAll(".postButton");
   postButtons.forEach(post => {
     post.addEventListener('click', event=> {
+      
       event.preventDefault
+      debugger
       const id = event.target.id.slice('button-'.length)
+      console.log(id)
       const comment = document.getElementById(`input-${id}`)
-      postPika(`/posts/${id}/comments`, {comment})
+      postPika(`/posts/${id}/comments`, {comment: comment.value})
     })
   })
 }

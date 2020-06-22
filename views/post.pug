@@ -1,1 +1,25 @@
-.div hello from the post
+extends index
+block content
+  include navbar
+930 330
+430
+  .singlePostContainer
+    .singlePost__photoContainer
+      img.singlePost_photo(src="/" alt='the post pic')
+    .singlePost__userInfoContainer
+      .singlePost__profileIcon
+        img.singlePost_profilePic(src="/" alt='the post pic')
+      .singlePost__username
+      .singlePost__followingStatus
+    .singlePost__captionContainer
+      .singlePost__caption
+    .singlePost__commentsContainer
+      .singlePost__comments
+    .singlePost__responsesContainer
+      .singlePost__responses
+    .singlePost__addCommentContainer
+      input.singlePost__addComment(type="text" placeholder="Add comment...")
+    
+  include footer
+  script(src="staticJs/post.js" type="module")
+    .
