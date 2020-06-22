@@ -1,5 +1,6 @@
 export const login = async (username, password, error) => {
   const credentials = { email: username.value|| username, password: password.value || password }
+  debugger
   let response 
   try{
     const res = await fetch('https://cryptic-river-74579.herokuapp.com/api/users/token', {

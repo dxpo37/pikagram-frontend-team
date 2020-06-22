@@ -20,7 +20,7 @@ const getFollows = async (id) => {
               <div class="author">${post.user.userName}</div>
               <div class="individualPostCaption">${post.caption}</div>
             </div>
-            <div class="individualPostLikes" likedBy="${post.Likes.length}"  id="numLikes-${post.id}">liked by ${JSON.stringify(post.Likes[0].User.userName)} and ${post.Likes.length-1} others </div>
+            <div class="individualPostLikes" likedBy="${post.Likes.length}"  id="numLikes-${post.id}">liked by ${JSON.stringify(post.Likes[0].User.userName)} and <span class="numLikesSpan-${post.id}">${post.Likes.length-1}</span> others </div>
             <div class="likeContainer"><img class="addLike" id="addLike-${post.id}" src="/staticIcons/bulbasaur.svg"> </div>
             <a class="mainFeed__viewAllComments" href="/posts/${post.id}"> View all ${post.Comments.length} comments</a>
             <div class="mainFeed__addCommentContainer">
@@ -66,14 +66,14 @@ function addTrigger() {
   likes.forEach((like) => {
     like.addEventListener("click", (e) => {
       const id = e.target.id.slice('addLike-'.length)
-      const numLikes = document.getElementById(`numLikes-${id}`);
+      const numLikesSpan = document.querySelector(`.numLikesSpan-${id}`);
       if (e.target.classList.value.includes("liked")) {
-        numLikes.innerHTML = parseInt(numLikes.innerHTML) - 1;
+        numLikesSpan.innerHTML = parseInt(numLikesSpan.innerHTML) - 1;
         e.target.classList.remove("liked");
         deletePika(`/posts/${id}/likes`);
       } else {
         postPika(`/posts/${id}/likes`);
-        numLikes.innerHTML = parseInt(numLikes.innerHTML) + 1;
+        numLikesSpan.innerHTML = parseInt(numLikesSpan.innerHTML) + 1;
         e.target.classList.add("liked");
       }
     });
@@ -84,7 +84,6 @@ function addTrigger() {
     post.addEventListener('click', event=> {
       
       event.preventDefault
-      debugger
       const id = event.target.id.slice('button-'.length)
       console.log(id)
       const comment = document.getElementById(`input-${id}`)
