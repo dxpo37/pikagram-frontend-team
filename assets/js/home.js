@@ -12,7 +12,9 @@ const getFollows = async (id) => {
       return `
           <div class="individualPost">
             <div class="mainFeed__profileUsernameContainer">
-              <img class="mainFeed_profilePhoto" id="${post.user.userName}"  src="${post.user.profilePicPath}">
+              <div class="mainFeed__profilePhotoContainer">
+                <img class="mainFeed__profilePhoto" id="${post.user.userName}"  src="${post.user.profilePicPath}">
+              </div>
               <div class="author">${post.user.userName}</div>
             </div>
             <img class="mainFeed__postPhoto" src="${post.photoPath}" alt="${post.photoPath}">

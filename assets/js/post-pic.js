@@ -18,10 +18,7 @@ send.addEventListener("click", async (e)=> {
     "Authorization" : `Bearer ${token}`,
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify({
-    "caption": "aaaaaaaaaaaaaaa",
-    "photoPath": "https://pikagram-pics1.s3.us-east-2.amazonaws.com/1592884110554.png"
-})
+  body: JSON.stringify(body)
   });
 });
 

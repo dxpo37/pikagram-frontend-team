@@ -2,6 +2,8 @@
   height: 20px;
 }
 
+.mainBoxHome { padding-top: 90px; padding-left: 50px;}
+
 .mainFeed__postPhoto{
   width: 580px;
 }
@@ -24,4 +26,20 @@
 .addComment{
   border: none;
   width: 500px;
+}
+
+.mainFeed__profilePhotoContainer{
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px
+}
+
+.mainFeed__profilePhoto {
+  border-radius: 50%;
+  position: relative;
+  overflow:visible;
+  top: -20px;
+  left: -17px;
+  z-index: -1
 }

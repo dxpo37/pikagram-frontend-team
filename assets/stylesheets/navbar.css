@@ -10,6 +10,7 @@
   font-weight: 500;
 }
 .navBar_container{
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   padding: 0 20px 7px;
