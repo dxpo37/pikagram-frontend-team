@@ -4,7 +4,7 @@ const id = localStorage.id
 
 const postsContainer = document.querySelector(".postsContainer");
 import { get, postPika, deletePika } from "./utils.js";
-if(!localStorage.token) {window.location.href="/splash"}
+if (!localStorage.token) { window.location.href = "/splash" }
 //render feed
 const getFollows = async (id) => {
   const following = await get(`/posts/following/${id}`);
@@ -13,49 +13,48 @@ const getFollows = async (id) => {
   let hasComment;
   const posts = following.sortedPosts
     .map((post) => {
-      if(JSON.stringify(post.Likes[0])){
-         withLikes = `<div class="individualPostLikes" likedBy="${post.Likes.length}"  id="numLikes-${post.id}">liked by ${JSON.stringify(post.Likes[0].User.userName)} and <span class="numLikesSpan-${post.id}">${post.Likes.length-1}</span> others` 
-      } else{
-         withLikes = ""
+      if (JSON.stringify(post.Likes[0])) {
+        withLikes = `<div class="individualPostLikes" likedBy="${post.Likes.length}"  id="numLikes-${post.id}">liked by ${JSON.stringify(post.Likes[0].User.userName)} and <span class="numLikesSpan-${post.id}">${post.Likes.length - 1}</span> others`
+      } else {
+        withLikes = `<div class="individualPostLikes" likedBy="${post.Likes.length}" id="numLikes-${post.id}"><span class="numLikesSpan-${post.id}"> likes`
       }
-      
+
       return `
           <div class="individualPost">
             <div class="mainFeed__profileUsernameContainer">
               <div class="mainFeed__profilePhotoContainer">
                 <img class="mainFeed__profilePhoto" id="${post.user.userName}"  src="${post.user.profilePicPath}">
               </div>
-              <div class="author">${post.user.userName}</div>
+              <div class="postUsername">${post.user.userName}</div>
             </div>
             <img class="mainFeed__postPhoto" src="${post.photoPath}" alt="${post.photoPath}">
             <div class="mainFeed__captionContainer">
               <div class="author">${post.user.userName}: </div>
               <div class="individualPostCaption"> ${post.caption} </div>
             </div>
-            </div>
-            ${withLikes}
-            <div class="likeContainer"><img class="addLike" id="addLike-${post.id}" src="/staticIcons/bulbasaur.svg"> </div>
+            <div class="likeContainer"><img class="addLike" id="addLike-${post.id}" src="/staticIcons/bulbasaur.svg">${withLikes}</div></div>
             <a class="mainFeed__viewAllComments" href="/posts/${post.id}"> View all ${post.Comments.length} comments</a>
             <div class="mainFeed__addCommentContainer">
               <input class="addComment" type="text" id="input-${post.id}" placeholder="Add comment..." >
               <button class="postButton" id="button-${post.id}"> POST
             </div>
             <div class="individualPostComments">
-              ${post.Comments.slice(2).map(comment=> { 
-                if(comment.length === 0){
-                  hasCommentUser = ""
-                  hasComment = ""
-                } else {
-                                   hasCommentUser = comment.User.userName;
-                  hasComment = comment.comment
-                }
-                return `
+              ${post.Comments.slice(2).map(comment => {
+        if (comment.length === 0) {
+          hasCommentUser = ""
+          hasComment = ""
+        } else {
+          hasCommentUser = comment.User.userName;
+          hasComment = comment.comment
+        }
+        return `
                   <div>${hasCommentUser}: ${hasComment}</div>
-                  
+
                 `
-                }).join("") 
-              }
+      }).join("")
+        }
             </div>
+          </div>
           </div>
           `;
     })
@@ -78,7 +77,7 @@ const getFirstFiveUsers = async () => {
   });
 };
 getFollows(id);
-getFirstFiveUsers();
+// getFirstFiveUsers();
 
 //add hook to likes icons
 function addTrigger() {
@@ -98,16 +97,16 @@ function addTrigger() {
       }
     });
   });
-  
+
   const postButtons = document.querySelectorAll(".postButton");
   postButtons.forEach(post => {
-    post.addEventListener('click', event=> {
-      
+    post.addEventListener('click', event => {
+
       event.preventDefault
       const id = event.target.id.slice('button-'.length)
 
       const comment = document.getElementById(`input-${id}`)
-      postPika(`/posts/${id}/comments`, {comment: comment.value})
+      postPika(`/posts/${id}/comments`, { comment: comment.value })
     })
   })
 }

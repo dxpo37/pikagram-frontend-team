@@ -1,21 +1,61 @@
 body{
   position: relative;
 }
-.individualPostCaption{padding-left: 10px; font-weight: 800; padding-top: 6px;}
-.author{font-weight: 800; font-size: 12px;; padding-top: 10px;}
-main{
-  /* position: relative; */
-  min-height: 100vh;
-}
-.addLike{
-  height: 20px;
+
+.individualPostCaption{
+  padding-left: 5px;
 }
 
-.mainBoxHome { 
-  /* position: relative; */
-  padding-top: 90px;
-  padding-left: 50px;
-  }
+.likeContainer{
+  display: flex;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.mainFeed__viewAllComments, .addComment, .individualPostComments{
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.mainFeed__viewAllComments{
+  color: grey;
+}
+
+.postButton{
+  height: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  width: 50px;
+  box-sizing: border-box;
+  border: transparent;
+  background-color: rgba(0, 149, 246, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  outline-width: 0;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+
+.author{
+  font-weight: 600;
+}
+
+.postUsername{
+  font-weight: 600;
+}
+
+.addLike{
+  height: 20px;
+  padding-right: 10px;
+}
+
+.mainBoxHome {
+  display: flex;
+  justify-content: center;
+}
 
 .mainFeed__postPhoto{
   width: 580px;
@@ -24,11 +64,16 @@ main{
 .mainFeed__profileUsernameContainer{
   display: flex;
   align-items: center;
+  border-bottom: 1px solid rgba(219,219,219);
 }
 
 .mainFeed__captionContainer{
+  border-top: 1px solid rgba(219,219,219);
   display: flex;
+  padding: 10px;
+  padding-left: 20px;
 }
+
 
 .individualPost{
   border: 1px solid rgba(219,219,219);
@@ -44,11 +89,12 @@ main{
 .mainFeed__profilePhotoContainer{
   border: 1px solid gray;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  margin-left: 10px;
-  margin-top: 10px;
-
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 10px;
 }
 
 .mainFeed__profilePhoto {
@@ -60,7 +106,7 @@ main{
   top: -20px;
   left: -17px;
   z-index: -1;
-  
+
 
 }
 /* The Modal (background) */
@@ -99,7 +145,7 @@ main{
   float: right;
   font-size: 28px;
   font-weight: bold;
-  
+
 }
 
 .close:hover,
@@ -165,7 +211,7 @@ main{
   position: relative;
   height: 30px;
   width: 100px;
-  
+
 }
 
 .file > input[type="file"] {
