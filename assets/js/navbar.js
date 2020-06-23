@@ -42,7 +42,7 @@ const id = localStorage.id;
 // singleFileUpload = upload.single('image')
 
 
-const submitButton = document.querySelector('.formSubmit');
+const submitButton = document.querySelector('.fileSend');
 const profileButton = document.querySelector('.navBar__profile')
 const homeButton = document.querySelector('.navBar__homepage')
 const postButton = document.querySelector('.navBar__addPost')

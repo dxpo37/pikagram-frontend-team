@@ -1,4 +1,3 @@
-extends index
 block content
   .navBar.navBar_container
     .navBar.navBar__logo Pikagram
@@ -19,11 +18,11 @@ block content
     .modal-content
       span.close &times;
       h1#make-a-post Make a Post
-      form(method='post', enctype='multipart/form-data')
-        input(type='file', name='fileUpload' accept="image/*" )
-        input(type="text", name='fileCaption', placeholder="hello")
-        input(type='button', name='fileSend' value="submit")
+      form.modal__container(method='post', enctype='multipart/form-data')
+        div.file
+          label(for="file-input") Pick a file
+          input.modal__select(type='file', id="file-input" name='fileUpload' accept="image/*" )
+        input.modal__caption(type="text", name='fileCaption', placeholder="caption please")
+        input.modal__button(type='button', name='fileSend' value="submit")
       script(src="staticJs/post-pic.js" type="module")
-
-
   script(src="/staticJs/navbar.js")

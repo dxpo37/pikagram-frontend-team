@@ -10,28 +10,17 @@ send.addEventListener("click", async (e) => {
   console.log(fileValue);
   const photoPath = await handleImageUpload(e);
   const body = { caption, photoPath };
-  // console.log(body)
-
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
   fetch("https://cryptic-river-74579.herokuapp.com/api/posts", {
-<<<<<<< HEAD
   method: "POST",
   headers: {
     "Authorization" : `Bearer ${token}`,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(body)
-=======
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      "caption": "aaaaaaaaaaaaaaa",
-      "photoPath": "https://pikagram-pics1.s3.us-east-2.amazonaws.com/1592884110554.png"
-    })
->>>>>>> 2d390d81df1a0c399727bd2c7ff1c13e0785cb8d
   });
+  window.location.href = '/'
 });
 
 

@@ -1,28 +1,27 @@
 extends index
 block content
   include navbar
-  .profileContainerDiv 
-    img.profileContainer.profilePic(src="/" alt="profile pic")
-    .usernameContainer
-      .profileContainer.username
-      button.editProfile Edit Profile
-      .profileContainer.dropDown this-is-a-beautiful-gear
-
-    .profileContainer.fullName
-      .profileId= profileId
-    .profileContainer.bio
-    .statsContainer
-      .profileContainer.numPostsContainer
-        .profileContainer.numPosts
-        .profileContainer posts
-      .profileContainer.numFollowersContainer
-        .profileContainer.numFollowers
-        .profileContainer Followers
-      .profileContainer.numFollowingContainer
-        .profileContainer.numFollowing
-        .profileContainer following
-  
-    .postsContainer posts
-  include footer
+  .bodyContainer
+    .profileContainerDiv 
+      .pictureContainer
+        img.profileContainer.profilePic(src="/" alt="profile pic")
+      .usernameContainer
+        .profileContainer.username
+        button.editProfile Edit Profile
+        .profileContainer.dropDown this-is-a-beautiful-gear
+      .profileContainer.fullName
+        .profileId= profileId
+      .profileContainer.bio
+      .statsContainer
+        .profileContainer.numPostsContainer
+          .profileContainer.numPosts
+          .profileContainer posts
+        .profileContainer.numFollowersContainer
+          .profileContainer.numFollowers
+          .profileContainer Followers
+        .profileContainer.numFollowingContainer
+          .profileContainer.numFollowing
+          .profileContainer following
+      .postsContainer posts
   script(src="staticJs/profile.js" type="module")
   

@@ -3,12 +3,21 @@
 // const id = localStorage.id
 const postsContainer = document.querySelector(".postsContainer");
 import { get, postPika, deletePika } from "./utils.js";
-
+if(!localStorage.token) {window.href("/splash")}
 //render feed
 const getFollows = async (id) => {
   const following = await get(`/posts/following/${id}`);
+  let withLikes;
+  let hasCommentUser;
+  let hasComment;
   const posts = following.sortedPosts
     .map((post) => {
+      if(JSON.stringify(post.Likes[0])){
+         withLikes = `<div class="individualPostLikes" likedBy="${post.Likes.length}"  id="numLikes-${post.id}">liked by ${JSON.stringify(post.Likes[0].User.userName)} and <span class="numLikesSpan-${post.id}">${post.Likes.length-1}</span> others` 
+      } else{
+         withLikes = ""
+      }
+      
       return `
           <div class="individualPost">
             <div class="mainFeed__profileUsernameContainer">
@@ -19,10 +28,11 @@ const getFollows = async (id) => {
             </div>
             <img class="mainFeed__postPhoto" src="${post.photoPath}" alt="${post.photoPath}">
             <div class="mainFeed__captionContainer">
-              <div class="author">${post.user.userName}</div>
-              <div class="individualPostCaption">${post.caption}</div>
+              <div class="author">${post.user.userName}: </div>
+              <div class="individualPostCaption"> ${post.caption} </div>
             </div>
-            <div class="individualPostLikes" likedBy="${post.Likes.length}"  id="numLikes-${post.id}">liked by ${JSON.stringify(post.Likes[0].User.userName)} and <span class="numLikesSpan-${post.id}">${post.Likes.length-1}</span> others </div>
+            </div>
+            ${withLikes}
             <div class="likeContainer"><img class="addLike" id="addLike-${post.id}" src="/staticIcons/bulbasaur.svg"> </div>
             <a class="mainFeed__viewAllComments" href="/posts/${post.id}"> View all ${post.Comments.length} comments</a>
             <div class="mainFeed__addCommentContainer">
@@ -31,9 +41,17 @@ const getFollows = async (id) => {
             </div>
             <div class="individualPostComments">
               ${post.Comments.slice(2).map(comment=> { 
+                if(comment.length === 0){
+                  hasCommentUser = ""
+                  hasComment = ""
+                } else {
+                 console.log(comment)
+                  hasCommentUser = comment.User.userName;
+                  hasComment = comment.comment
+                }
                 return `
-                  <div>${comment.userId}</div>
-                  <div>${comment.comment}</div>
+                  <div>${hasCommentUser}: ${hasComment}</div>
+                  
                 `
                 }).join("") 
               }
