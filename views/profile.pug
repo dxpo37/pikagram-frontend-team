@@ -2,16 +2,18 @@ extends index
 block content
   include navbar
   .bodyContainer
-    .profileContainerDiv 
-      .pictureContainer
-        img.profileContainer.profilePic(src="/" alt="profile pic")
+    .profileContainerDiv
+      .outerPictureContainer
+        .pictureContainer
+          img.profileContainer.profilePic(src="/" alt="profile pic")
       .usernameContainer
         .profileContainer.username
-        button.editProfile Edit Profile
-        .profileContainer.dropDown this-is-a-beautiful-gear
-      .profileContainer.fullName
-        .profileId= profileId
-      .profileContainer.bio
+        .profileContainer__button
+          button.editProfile Edit Profile
+      .profileContainer
+        .fullName
+          .profileId= profileId
+        .bio
       .statsContainer
         .profileContainer.numPostsContainer
           .profileContainer.numPosts
@@ -24,4 +26,3 @@ block content
           .profileContainer following
       .postsContainer posts
   script(src="staticJs/profile.js" type="module")
-  

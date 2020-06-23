@@ -10,20 +10,24 @@ const fullName = document.querySelector('.fullName');// (first and last)
 const bio = document.querySelector('.bio');
 const numFollowers = document.querySelector('.numFollowers');
 const numFollowing = document.querySelector('.numFollowing');
+const numPosts = document.querySelector('.numPosts')
 const dropDown = document.querySelector('.dropDown');
 const editProfile = document.querySelector('.editProfile');
-import {get, numberOfFollowers, numberOfFollowing} from './utils.js'
+
+let postCount = 0;
+
+import { get, numberOfFollowers, numberOfFollowing } from './utils.js'
 
 const currentProfileId = document.querySelector('.profileId').innerHTML
-editProfile.addEventListener('click', ()=> {
-  window.location.href='/edit-profile'
+editProfile.addEventListener('click', () => {
+  window.location.href = '/edit-profile'
 })
 
 const fetchProfile = async (id) => {
   const profileInfo = await get(`/users/${id}`);
   // profileContainer.innerHTML = JSON.stringify(profileInfo);
-  username.innerHTML =profileInfo.user.userName
-  profilePic.setAttribute('src',profileInfo.user.profilePicPath || '/')
+  username.innerHTML = profileInfo.user.userName
+  profilePic.setAttribute('src', profileInfo.user.profilePicPath || '/')
   fullName.innerHTML = `${profileInfo.user.firstName} ${profileInfo.user.lastName}`
   bio.innerHTML = profileInfo.user.bio || 'default bio'
   numFollowers.innerHTML = await numberOfFollowers(id)
@@ -35,12 +39,14 @@ const fetchOwnPosts = async (id) => {
   postsContainer.innerHTML = `
     <div class="profileIndividiualPost">
       ${ownPosts.userPosts.posts.map(post => {
-        return `
+    postCount++
+    return `
         <img src="${post.photoPath}">
         `
-      })}
+  })}
     </div>
     `;
+  numPosts.innerHTML = postCount;
 
 };
 
