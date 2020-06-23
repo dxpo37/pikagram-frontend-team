@@ -1,7 +1,9 @@
 block content
-  form(method='post', enctype='multipart/form-data')
-    input(type='file', name='fileUpload' accept="image/*" )
-    input(type="text", name='fileCaption', placeholder="hello")
-    input(type='button', name='fileSend' value="submit") 
-  script(src="staticJs/post-pic.js" type="module")
-  
+  .modal#myModal
+    .modal-content
+      span.close &times;
+      form(method='post', enctype='multipart/form-data')
+        input(type='file', name='fileUpload' accept="image/*" )
+        input(type="text", name='fileCaption', placeholder="hello")
+        input(type='button', name='fileSend' value="submit")
+      script(src="staticJs/post-pic.js" type="module")
