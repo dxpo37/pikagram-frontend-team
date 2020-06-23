@@ -1,6 +1,7 @@
-// const homeurl = 'https://cryptic-river-74579.herokuapp.com';
-// const token = localStorage.token
-// const id = localStorage.id
+const homeurl = 'https://cryptic-river-74579.herokuapp.com';
+const token = localStorage.token
+const id = localStorage.id
+
 const postsContainer = document.querySelector(".postsContainer");
 import { get, postPika, deletePika } from "./utils.js";
 if(!localStorage.token) {window.location.href="/splash"}
