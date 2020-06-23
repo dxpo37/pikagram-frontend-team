@@ -1,75 +1,91 @@
+textarea{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.editProfileFlex{
+  position: absolute;
+  top: 50px;
+}
 .editProfileContainer {
   padding:20px;
-  display: grid;
-  grid-template-columns: 1fr 200px 15px 600px 1fr;
-  grid-template-rows:  80px 80px;
-  grid-template-areas: 
-  ". editprofile . profile ." 
-  ". changepassword . profile ."
-  ". . . form ."
-}
-.editProfile{
-  grid-area: editprofile;
 }
 
-
-.changePassword{
-  grid-area: changepassword;
-}
-.editProfile__profileInfo{
-  grid-area: profile;
+.profilePicContainer{
   display: flex;
-  justify-content: space-between;
+
 }
+
+#profilePic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 25px;
+}
+
+.editProfile__username{
+  font-size: larger;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
 .editProfileForm{
-  grid-area: form;
-  display: grid;
-  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
-  grid-template-areas:"name" "username" "bio" "email" "age" "gender" "submit";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.editProfileContainer > .editProfile{ border-left: 2px solid black;}
-
-
-.editProfileForm input{
-  width: 350px;
+.editProfileForm input, textarea{
+  width: 500px;
   height: 33px;
 }
 
-.editProfile__nameContainer{
-  grid-area: name;
+.editProfile__nameContainer,
+.editProfile__usernameContainer,
+.editProfile__bioContainer,
+.editProfile__emailContainer,
+.editProfile__ageContainer,
+.editProfile__genderContainer
+{
+  margin: 5px;
   display: flex;
+  justify-content: center;
   justify-content: space-between;
+  align-items: center;
 }
-.editProfile__usernameContainer{
-  grid-area: username;
-  display: flex;
-  justify-content: space-between;
-}
-.editProfile__bioContainer{
-  grid-area: bio;
-  display: flex;
-  justify-content: space-between;
-}
-.editProfile__emailContainer{
-  grid-area: email;
-  display: flex;
-  justify-content: space-between;
-}
-.editProfile__ageContainer{
-  grid-area: age;
-  display: flex;
-  justify-content: space-between;
-}
-.editProfile__genderContainer{
-  grid-area: gender;
-  display: flex;
-  justify-content: space-between;
-}
+
 .editProfileSubmit{
   grid-area: submit;
   display: flex;
   justify-content: space-between;
   width:  80px;
   height: 33px;
+}
+
+.name,
+.usernameLabel,
+.bio,
+.email,
+.age,
+.gender{
+  font-weight: 500;
+  padding-right: 20px;
+}
+
+.editProfileSubmit{
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+  box-sizing: border-box;
+  border: transparent;
+  background-color: rgba(0, 149, 246, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  outline-width: 0;
+  box-sizing: border-box;
+  margin-top: 10px;
 }

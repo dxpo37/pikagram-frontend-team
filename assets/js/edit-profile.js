@@ -1,8 +1,8 @@
-const changePasswordDiv = document.querySelector(".changePassword");
-changePasswordDiv.addEventListener(
-  "click",
-  () => (window.location.href = "/change-password")
-);
+// const changePasswordDiv = document.querySelector(".changePassword");
+// changePasswordDiv.addEventListener(
+//   "click",
+//   () => (window.location.href = "/change-password")
+// );
 
 const editProfileForm = document.querySelector(".editProfileForm");
 import { get, putPika } from "./utils.js";
@@ -27,7 +27,7 @@ function updateInput(uniqueClassName, value) {
 }
 
 
-const fetchEditProfileContent = async() => {
+const fetchEditProfileContent = async () => {
 
   const response = await get(`/users/${id}`);
   const fields = [
@@ -39,13 +39,13 @@ const fetchEditProfileContent = async() => {
     "editProfileGender",
   ];
 
-  const {firstName, lastName, userName, bio, email, age, gender, profilePicPath} = response.user
-  const returned = [firstName +' ' + lastName, userName, bio, email,  age, gender]
+  const { firstName, lastName, userName, bio, email, age, gender, profilePicPath } = response.user
+  const returned = [firstName + ' ' + lastName, userName, bio, email, age, gender]
   fields.forEach((field, i) => updateInput(field, returned[i]))
 
   document.querySelector('.editProfile__username').innerHTML = userName
-  document.querySelector('.editProfile__profilePic').setAttribute('src', profilePicPath) 
-  
+  document.querySelector('#profilePic').setAttribute('src', profilePicPath)
+
 }
 
 

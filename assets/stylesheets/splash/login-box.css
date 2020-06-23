@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
 /* ============THIS IS FOR THE LOGO TEXT============ */
@@ -73,7 +73,7 @@
 .loginBox__forgotPassword a {outline-width: 0;}
 
 /* ============THIS IS FOR THE SIGN UP TEXT============ */
-.loginBox__signUp > p{ 
+.loginBox__signUp > p{
   color: rgb(38,38,38);
   font-size: 14px;
   text-align: center;
@@ -112,4 +112,3 @@
 .loginBox__getApp > p {
   font-size: 14px;
 }
-

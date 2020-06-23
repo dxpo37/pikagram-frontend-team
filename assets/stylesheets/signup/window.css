@@ -1,6 +1,6 @@
 body, button{
   background-color: rgba(250,250,250);
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  : -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 a { outline-width: 0;}
 
@@ -9,8 +9,8 @@ a { outline-width: 0;}
   display: grid;
   grid-template-columns: 1fr 350px 1fr;
   grid-template-rows:  10px 110px 90px 42px 42px 42px 42px 42px 45px 80px 10px 70px 50px 50px;
-  grid-template-areas: 
-  ".  . ." 
+  grid-template-areas:
+  ".  . ."
   ". logo . "
   ". signupText . "
   ". email ."
@@ -22,7 +22,7 @@ a { outline-width: 0;}
   ". terms ."
   ". . ."
   ". login ."
-  ". getapp ." 
+  ". getapp ."
   ". getAppButtons .";
 }
 
