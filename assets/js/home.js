@@ -3,7 +3,7 @@
 // const id = localStorage.id
 const postsContainer = document.querySelector(".postsContainer");
 import { get, postPika, deletePika } from "./utils.js";
-if(!localStorage.token) {window.href("/splash")}
+if(!localStorage.token) {window.location.href="/splash"}
 //render feed
 const getFollows = async (id) => {
   const following = await get(`/posts/following/${id}`);
