@@ -1,0 +1,40 @@
+const file = document.querySelector("[name=fileUpload]")
+const captionInput = document.querySelector("[name=fileCaption]")
+const send = document.querySelector("[name=fileSend]")
+console.log(file)
+
+send.addEventListener("click", async (e)=> {
+  const token = localStorage.token;
+  const caption = captionInput.value;
+  const fileValue = file.value;
+  console.log(fileValue);
+  const photoPath = await handleImageUpload(e);
+  const body= {caption, photoPath} ;
+  // console.log(body)
+
+  fetch("https://cryptic-river-74579.herokuapp.com/api/posts", {
+  method: "POST",
+  headers: {
+    "Authorization" : `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    "caption": "aaaaaaaaaaaaaaa",
+    "photoPath": "https://pikagram-pics1.s3.us-east-2.amazonaws.com/1592884110554.png"
+})
+  });
+});
+
+
+  const handleImageUpload = async () => {
+    const files = file.files
+    const formData = new FormData()
+    formData.append('file', files[0])
+
+    let res = await fetch('/image', { method: 'POST', body: formData })
+    let response = await res.json()
+    return response
+    
+  }
+
+

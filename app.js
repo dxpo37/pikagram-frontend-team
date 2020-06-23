@@ -1,18 +1,16 @@
 const express = require('express')
-const cp = require('cookie-parser')
-const csrf = require('csurf')({ cookie: true })
-// const db = require("./models/index")
+const imageroutes = require('./assets/routes/image-upload')
+
 const app = express()
 const ah = (handler) => (req, res, next) => handler(req, res, next).catch(next)
-
-app.use(cp())
-app.use(express.urlencoded({ extended: false }))
 
 app.use('/staticImages', express.static('assets/images'))
 app.use('/staticCSS', express.static('assets/stylesheets'))
 app.use('/staticFonts', express.static('assets/fonts'))
 app.use('/staticIcons', express.static('assets/icons'))
 app.use('/staticJs', express.static('assets/js'))
+
+app.use('/image', imageroutes)
 
 app.get("/splash", ah(async (req, res) => {
   res.render('splash.pug')
@@ -55,8 +53,12 @@ app.get("/error", ah(async (req, res) => {
   // res.end('hello from the would be pug')
 }))
 
+app.get("/imagetest", ah(async (req, res) => {
+  res.render('imagetest.pug')
+}))
+
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8877;
 }
-app.listen(port);
+app.listen(port, console.log(`listening on ${port}`));
