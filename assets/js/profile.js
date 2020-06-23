@@ -44,7 +44,7 @@ const fetchOwnPosts = async (id) => {
 
 };
 
-console.log(currentProfileId)
+
 
 fetchProfile(parseInt(currentProfileId));
 fetchOwnPosts(parseInt(currentProfileId));

@@ -18,7 +18,7 @@ region: "us-east-2",
 const s3 = new aws.S3();
  
 const fileFilter = (req, file, cb) => {
- console.log("2")
+
   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
     cb(null, true)
   } else {

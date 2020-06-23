@@ -25,7 +25,7 @@ app.get("/login", ah(async (req, res) => {
 }))
 
 app.get("/edit-profile", ah(async (req, res) => {
-  console.log(req)
+
   res.render('edit-profile.pug') //this is just placeholder
 }))
 

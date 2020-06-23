@@ -66,7 +66,7 @@ submitButton.addEventListener('click', async(event) =>{
 
 
 async function post(apiEndPoint, body) {
-  debugger
+
   const res = await fetch(homeurl + apiEndPoint, {
     method: 'POST',
     body: {

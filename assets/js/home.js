@@ -45,8 +45,7 @@ const getFollows = async (id) => {
                   hasCommentUser = ""
                   hasComment = ""
                 } else {
-                 console.log(comment)
-                  hasCommentUser = comment.User.userName;
+                                   hasCommentUser = comment.User.userName;
                   hasComment = comment.comment
                 }
                 return `
@@ -105,7 +104,7 @@ function addTrigger() {
       
       event.preventDefault
       const id = event.target.id.slice('button-'.length)
-      console.log(id)
+
       const comment = document.getElementById(`input-${id}`)
       postPika(`/posts/${id}/comments`, {comment: comment.value})
     })

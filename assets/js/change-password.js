@@ -24,7 +24,7 @@ changePasswordForm.addEventListener('keyup', ()=>{
       changePasswordSubmitButton.removeAttribute('disabled')
     }
     else {
-      console.log('passwordMustMatch') //TODO: change to userful info
+      Match') //TODO: change to userful info
     }
   }
 })

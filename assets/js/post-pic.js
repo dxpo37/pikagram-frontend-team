@@ -1,13 +1,12 @@
 const file = document.querySelector("[name=fileUpload]")
 const captionInput = document.querySelector("[name=fileCaption]")
 const send = document.querySelector("[name=fileSend]")
-console.log(file)
 
 send.addEventListener("click", async (e) => {
   const token = localStorage.token;
   const caption = captionInput.value;
   const fileValue = file.value;
-  console.log(fileValue);
+
   const photoPath = await handleImageUpload(e);
   const body = { caption, photoPath };
   var modal = document.getElementById("myModal");
