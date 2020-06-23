@@ -1,4 +1,4 @@
-const homeurl = 'https://cryptic-river-74579.herokuapp.com';
+
 const token = localStorage.token
 const id = localStorage.id
 

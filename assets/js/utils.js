@@ -87,28 +87,28 @@ export const placeholderMovement = (element, placeholder)=> {
 export async function postPika(apiEndPoint, payload){
   const res = await fetch(homeurl + apiEndPoint, {
     method: 'POST',
-    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.token}`},
     body: JSON.stringify(payload)
   });
 }
 export async function putPika(apiEndPoint, payload){
   const res = await fetch(homeurl + apiEndPoint, {
     method: 'POST',
-    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.token}`},
     body: JSON.stringify(payload)
   });
 }
 
 export async function deletePika(apiEndPoint){
-  const res = await fetch(homeurl + apiEndPoint, {
+  const res = await fetch('https://cryptic-river-74579.herokuapp.com/api' + apiEndPoint, {
     method: 'DELETE',
-    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`},
+    headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.token}`},
   });
 }
 
 export async function get(apiEndPoint) {
-  const res = await fetch(homeurl + apiEndPoint, {
-    headers: { Authorization: `Bearer ${token}` },
+  const res = await fetch('https://cryptic-river-74579.herokuapp.com/api' + apiEndPoint, {
+    headers: { Authorization: `Bearer ${localStorage.token}` },
   });
   const response = await res.json();
   return response;
