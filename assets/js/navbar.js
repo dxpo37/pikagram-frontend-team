@@ -1,5 +1,5 @@
 // const homeurl = "https:/cryptic-river-74579.herokuapp.com/api";
-const homeurl = "http://localhost:8080/api";
+const homeurl = "https://pikagram-api.herokuapp.com/api/";
 
 const token = localStorage.token;
 const id = localStorage.id;

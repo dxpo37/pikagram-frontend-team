@@ -11,7 +11,7 @@ send.addEventListener("click", async (e) => {
   const body = { caption, photoPath };
   var modal = document.getElementById("myModal");
   modal.style.display = "none";
-  fetch("http://localhost:8080/apiposts", {
+  fetch("https://pikagram-api.herokuapp.com/api/posts", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

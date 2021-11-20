@@ -5,7 +5,7 @@ const ah = (handler) => (req, res, next) => handler(req, res, next).catch(next);
 
 // router.get('/', ah(async (req, res, next) => {
 
-//   // const res = await fetch('http://localhost:8080/apiposts/following/:userId')
+//   // const res = await fetch('https://pikagram-api.herokuapp.com/apiposts/following/:userId')
 
 // }))
 //

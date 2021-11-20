@@ -1,5 +1,5 @@
 // dconst { backendHost } = require("../../config");)
-const host = "http://localhost:8080/api";
+const host = "https://pikagram-api.herokuapp.com/api";
 export const login = async (username, password, error) => {
   const credentials = {
     email: username.value || username,
