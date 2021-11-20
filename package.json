@@ -1,8 +1,8 @@
 {
   "name": "pikagram",
-  "version": "1.0.0",
-  "description": "",
-  "main": "apps.js",
+  "version": "2.0.0",
+  "description": "That's right, you guessed t",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon -r dotenv/config app.js",
@@ -22,6 +22,7 @@
     "multer-s3": "^2.9.0",
     "nodemon": "^2.0.4",
     "per-env": "^1.0.2",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "js-cookie": "^2.2.1"
   }
 }

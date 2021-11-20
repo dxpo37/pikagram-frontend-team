@@ -4,4 +4,8 @@ module.exports = {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     region: process.env.AWS_REGION,
   },
-}
+  urls: {
+    backendHost: process.env.DB_HOST,
+    port: process.env.PORT,
+  },
+};
